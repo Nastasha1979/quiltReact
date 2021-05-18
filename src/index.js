@@ -4,6 +4,7 @@ import './Styles.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.css';
 import './fonts/Girassol/Girassol-Regular.ttf';
 import './fonts/Roboto/Roboto-Regular.ttf';
 import './fonts/Sacramento/Sacramento-Regular.ttf';
