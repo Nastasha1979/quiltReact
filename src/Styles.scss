@@ -1,0 +1,17 @@
+//Variables
+$backgroundClr: rgb(250,237,221);
+$primaryFont: "Girassol", cursive;
+$secondaryFont: "Roboto", sans-serif;
+$thirdFont: "Sacramento", cursive;
+
+.App-header {
+    background-color: $backgroundClr;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+    font-family: $primaryFont;
+  }

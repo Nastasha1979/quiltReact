@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Styles.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './fonts/Girassol/Girassol-Regular.ttf';
+import './fonts/Roboto/Roboto-Regular.ttf';
+import './fonts/Sacramento/Sacramento-Regular.ttf';
 
 ReactDOM.render(
   <React.StrictMode>
