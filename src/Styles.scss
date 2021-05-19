@@ -3,6 +3,7 @@ $backgroundClr: rgb(250,237,221);
 $primaryFont: "Girassol", cursive;
 $secondaryFont: "Roboto", sans-serif;
 $thirdFont: "Sacramento", cursive;
+$lightColoredText: rgb(158, 154, 154);
 
 .App-header {
     background-color: $backgroundClr;
@@ -14,4 +15,49 @@ $thirdFont: "Sacramento", cursive;
     font-size: calc(10px + 2vmin);
     color: black;
     font-family: $primaryFont;
-  }
+}
+
+//Navbar Styles
+
+.navbarStyles-container {
+  background-color: $backgroundClr;
+}
+
+.logoStyle {
+  font-family: $primaryFont;
+  color: black;
+  font-size: 3rem !important;
+}
+
+.navItem {
+  color: $lightColoredText;
+  font-family: $secondaryFont;
+  font-size: 1.5rem;
+}
+
+//Footer
+
+.footerStyles {
+  background-color: $backgroundClr;
+}
+
+.footerLink {
+  color: $lightColoredText;
+  font-family: $secondaryFont;
+}
+
+.footBarSpan {
+  color: $lightColoredText;
+}
+
+//Classes
+
+.mediaStyles {
+  width: 100%;
+  
+}
+
+.imgStyles {
+  height: 150px;
+  width: 150px;
+}

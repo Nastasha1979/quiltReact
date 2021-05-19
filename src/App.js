@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import {BrowserRouter} from "react-router-dom";
+import SwitchComponent from "./components/SwitchComponent";
 import './Styles.scss';
 
 class App extends Component {
   render() {
     return(
-      <div className="App-header">
-        Hello World!
-      </div>
+      <BrowserRouter>
+          <SwitchComponent />
+      </BrowserRouter>
     );
   }
 }
