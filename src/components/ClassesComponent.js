@@ -46,12 +46,12 @@ function Classes(props){
         <div className="container-fluid">
             <div className="row">
                 <div class="col-12 text-center my-4">
-                    <h2>Classes</h2>
+                    <h2 className="mainHeader">Classes</h2>
                 </div>
             </div>
             <div className="row">
                 <div class="col-8 m-auto text-center text-muted">
-                    <h5>Take one of our courses, in person or virtually, and receive individual attention while learning new skills and making new quilt friends.</h5>
+                    <h5 className="subHeader">Take one of our courses, in person or virtually, and receive individual attention while learning new skills and making new quilt friends.</h5>
                 </div>
             </div>
             <div className="row py-5 mx-auto">

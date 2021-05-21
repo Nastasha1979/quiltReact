@@ -47,8 +47,8 @@ import {
     return (
       <React.Fragment>
         <Container fluid className="carouselContainer text-center pb-3">
-          <h2>Inspiration</h2>
-          <h5>Take a stroll through quilts submitted by our teachers, students, and friends to gather inspiration for your own quilts.</h5>
+          <h2 className="mainHeader">Inspiration</h2>
+          <h5 className="subHeader">Take a stroll through quilts submitted by our teachers, students, and friends to gather inspiration for your own quilts.</h5>
           <Carousel
             activeIndex={activeIndex}
             next={next}

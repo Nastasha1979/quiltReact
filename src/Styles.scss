@@ -5,6 +5,23 @@ $secondaryFont: "Roboto", sans-serif;
 $thirdFont: "Sacramento", cursive;
 $lightColoredText: rgb(158, 154, 154);
 
+
+.mainHeader {
+  font-family: $thirdFont;
+  font-size: 4rem;
+  text-align: center;
+  margin: auto;
+  
+}
+
+.subHeader {
+  font-family: $secondaryFont;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: auto;
+  
+}
+
 .App-header {
     background-color: $backgroundClr;
     min-height: 100vh;
@@ -135,3 +152,21 @@ $lightColoredText: rgb(158, 154, 154);
   color: black;
   font-family: $secondaryFont;
 }
+
+//Articles
+
+.articleMediaStyle img {
+  height: 200px;
+
+
+}
+
+.articleContainer {
+  height: 500px;
+}
+
+.articleContainer p {
+  font-size: 16px;
+  font-family: $secondaryFont;
+}
+
