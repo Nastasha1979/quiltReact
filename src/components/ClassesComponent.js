@@ -7,28 +7,33 @@ import { Media } from "reactstrap";
  * Get the row centered
  *******************************************************/
 function GetFirstClasses({classRoom}) {
-    return(
-        
-            <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer">
-                <Media className="mediaStyles">
-                    <Media left href="#" >
-                        <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
-                    </Media>
-                    <Media body className="mediaStylesText text-lg-center pl-3">
-                        <Media heading>
-                            {classRoom.title}
+    if(classRoom.key < 3) {
+        return(
+            
+                <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer">
+                    <Media className="mediaStyles">
+                        <Media left href="#" >
+                            <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
                         </Media>
-                        {classRoom.description}
+                        <Media body className="mediaStylesText text-lg-center pl-3">
+                            <Media heading>
+                                {classRoom.title}
+                            </Media>
+                            {classRoom.description}
+                        </Media>
                     </Media>
-                </Media>
-            </div>
-        
-    );
+                </div>
+            
+        );
+    } else {
+        return <div />
+    }
 }
 
 
+
 function Classes(props){
-    const showClass = props.classes.filter(classRoom => classRoom.key < 3).map(classRoom => {
+    const showClass = props.classes.map(classRoom => {
         return(
             <div key={classRoom.id}>
                 <GetFirstClasses classRoom={classRoom}/>
@@ -50,7 +55,6 @@ function Classes(props){
                 </div>
             </div>
             <div className="row py-5 mx-auto">
-            
                     {showClass}
             </div>
             <div className="row mb-3">

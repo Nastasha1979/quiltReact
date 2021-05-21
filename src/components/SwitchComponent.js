@@ -26,6 +26,8 @@ class SwitchComponent extends Component {
 
 
     render() {
+
+
         return(
             <React.Fragment>
                 <Navigation />

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Jumbotron, Container } from "reactstrap";
+import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import Quilt2 from "../public/quilt2.jpg";
 
