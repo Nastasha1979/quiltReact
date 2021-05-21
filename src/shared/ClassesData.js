@@ -1,39 +1,46 @@
+import Class1 from "../public/class1.jpg";
+import Class2 from "../public/class2.jpg";
+import Class3 from "../public/class3.jpg";
+import Class4 from "../public/class4.jpg";
+import Class5 from "../public/class5.jpg";
+import Class6 from "../public/class6.jpg";
+
 const CLASSES_DATA = [
     {
         key: 0,
         title: "Beginner's Quilting",
         description: "Learn quilting from A to Z",
-        pic: "./imgs/class1.jpg"
+        pic: Class1
     },
     {
         key: 1,
         title: "Developing Designs",
         description: "Sometimes the hardest part is getting started",
-        pic: "./imgs/class2.jpg"
+        pic: Class2
     },
     {
         key: 2,
         title: "Organizing Your Space",
         description: "Clean sewing room, clean mind",
-        pic: "./imgs/class3.jpg" 
+        pic: Class3
     },
     {
         key: 3,
         title: "Storing Your Quilts",
         description: "Keeping your quilt for life",
-        pic: "./imgs/class4.jpg"
+        pic: Class4
     },
     {
         key: 4,
         title: "Math For Quilters",
         description: "Learn the basics for perfect quilts",
-        pic: "./imgs/class5.jpg"
+        pic: Class5
     },
     {
         key: 5,
         title: "Color Theory",
         description: "Make eye-catching quilts",
-        pic: "./imgs/class6.jpg"
+        pic: Class6
     }
 ];
 

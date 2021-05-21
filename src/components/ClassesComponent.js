@@ -8,13 +8,13 @@ import { Media } from "reactstrap";
  *******************************************************/
 function GetFirstClasses({classRoom}) {
     return(
-        <React.Fragment>
-            <div class="col-8 col-md-4 mx-auto">
-                <Media>
-                    <Media left href="#" className="pr-2 mediaStyles">
-                        <Media object className="imgStyles" src={classRoom.pic} alt={classRoom.title} />
+        
+            <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer">
+                <Media className="mediaStyles">
+                    <Media left href="#" >
+                        <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
                     </Media>
-                    <Media body className="mediaStyles text-center">
+                    <Media body className="mediaStylesText text-lg-center pl-3">
                         <Media heading>
                             {classRoom.title}
                         </Media>
@@ -22,7 +22,7 @@ function GetFirstClasses({classRoom}) {
                     </Media>
                 </Media>
             </div>
-        </React.Fragment>
+        
     );
 }
 
@@ -50,6 +50,7 @@ function Classes(props){
                 </div>
             </div>
             <div className="row py-5 mx-auto">
+            
                     {showClass}
             </div>
             <div className="row mb-3">
@@ -57,6 +58,7 @@ function Classes(props){
                     <button className="btn btn-primary">See More</button>
                 </div>
             </div>
+        
         </div>
       
     );

@@ -21,6 +21,7 @@ $lightColoredText: rgb(158, 154, 154);
 
 .navbarStyles-container {
   background-color: $backgroundClr;
+  
 }
 
 .logoStyle {
@@ -34,6 +35,45 @@ $lightColoredText: rgb(158, 154, 154);
   font-family: $secondaryFont;
   font-size: 1.5rem;
 }
+
+//Top Image
+
+.topImageCont {
+  padding: 0;
+   
+}
+
+.topImage {
+  max-height: 600px;
+  width: 100%;
+  background-size: cover;
+
+}
+
+
+
+.textCont {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(248, 244, 238);
+    padding: 25px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    width: 70%;
+    h1 {
+      font-family: $thirdFont;
+      text-align: center;
+    }
+
+    h5 {
+      font-family: $secondaryFont;
+      text-align: center;
+    }
+}
+
+
 
 //Footer
 
@@ -54,10 +94,44 @@ $lightColoredText: rgb(158, 154, 154);
 
 .mediaStyles {
   width: 100%;
-  
+  margin: 0;
 }
 
-.imgStyles {
+.mediaStylesText {
+  width: 125%;
+}
+
+.classImgStyles {
   height: 150px;
   width: 150px;
+}
+
+.classMediaContainer {
+  margin: 0;
+  padding: 0;
+}
+
+//Carousel
+
+.carouselContainer h2 {
+  font-size: 4rem;
+  font-family: $thirdFont;
+}
+
+.carouselStyle {
+  width: 75%;
+}
+
+.carousel-item > img { 
+  width: 100%; 
+}
+
+.carousel-caption {
+  background-color: rgba(248, 244, 238, 0.705);
+  border-radius: 5px;
+}
+
+.carousel-caption h3, .carousel-caption p {
+  color: black;
+  font-family: $secondaryFont;
 }

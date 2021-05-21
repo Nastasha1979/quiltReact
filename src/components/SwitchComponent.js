@@ -31,7 +31,7 @@ class SwitchComponent extends Component {
                 <Navigation />
                 <Switch>
                     <Route exact path="/classes" render={() => <Classes classes={this.state.classes} />} />
-                    <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels} />} />
+                    <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
                 </Switch>
                 <Footer />
             </React.Fragment>
