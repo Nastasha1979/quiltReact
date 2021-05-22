@@ -1,6 +1,11 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 
+
+/************TO DO**************
+ * Fix the footer links to use Link
+ * Pin footer to bottom of page when only home screenshows
+ ********************************/
 function Footer(props) {
     return (
         <footer>

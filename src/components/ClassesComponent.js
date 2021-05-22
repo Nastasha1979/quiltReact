@@ -2,9 +2,9 @@ import React from "react";
 import { Media } from "reactstrap";
 
 /****************To Do************************
- * Fix the image issue
+ * 
  * Consider making the whole thing a carousel for button functionality
- * Get the row centered
+ * 
  *******************************************************/
 function GetFirstClasses({classRoom}) {
     if(classRoom.key < 3) {
@@ -59,7 +59,7 @@ function Classes(props){
             </div>
             <div className="row mb-3">
                 <div className="col text-center">
-                    <button className="btn btn-primary">See More</button>
+                    <button className="btn btn-lg btnStyles">See More</button>
                 </div>
             </div>
         

@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import Quilt2 from "../public/quilt2.jpg";
+
 
 /********************************
- * Fix the font on the image header
+ * To Do List
+ * fix the text over image on small/phone viewports
  **********************************/
 class Navigation extends Component {
     constructor(props) {
@@ -70,7 +71,7 @@ class Navigation extends Component {
                     </div>
                 </Navbar>
                 <Container fluid className="topImageCont px-0">
-                    <img className="topImage" src={Quilt2} alt="Quilt Picture Error" />
+                    <img className="topImage" src="/assets/quilt2.jpg" alt="Quilt Picture Error" />
                     <div className="textCont">
                         <h1>Learn the Timeless Art of Quilting</h1>
                         <h5 className="d-none d-lg-block">You too can provide warmth, protection, and love to friends and family in the tradition of men and women for hundreds of years. Come join us as we celebrate the art, beauty, and functionality of quilt-making.</h5>

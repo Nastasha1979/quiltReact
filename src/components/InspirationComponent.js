@@ -9,9 +9,8 @@ import {
 
 
 
-/*****************************************************
- * What you have now isn't working. Try what is at this link
- * https://react-bootstrap.github.io/components/carousel/
+/******************TO DO***********************************
+ * 
  *******************************************************/
 
  const Inspiration = ({inspiration}) => {

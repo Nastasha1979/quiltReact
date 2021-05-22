@@ -1,7 +1,3 @@
-import Sewing1 from "../public/sewing1.jpg";
-import Sewing2 from "../public/sewing2.jpg";
-import Sewing3 from "../public/sewing3.jpg";
-import Sewing4 from "../public/quilt4.jpg";
 
 const ARTICLE_DATA = [
 	{
@@ -14,7 +10,7 @@ const ARTICLE_DATA = [
 				"2.  Make a quick list of individual units needed to complete the quilt. The quilt I just finished had 216 scrappy flying geese units, 288 half-square triangles, 144 squares with two easy corner triangles on each, and 24 square in a square blocks.  I made a checklist with each of these units and the other major steps needed to get all of the parts and pieces ready for this quilt. Four of the above steps had to be completed before I could put the blocks together.  It made a lot of sense for me to break it down into steps rather than just write “make blocks” on my list.  Plus, I felt good being able to cross the individual items off of my list." 
 		],
 		readMoreLink: "https://www.aquiltinglife.com/2018/04/quilt-project-planning.html/",
-		pic: Sewing1						
+		pic: "/assets/sewing1.jpg"						
 									
 	},
 	{
@@ -28,7 +24,7 @@ const ARTICLE_DATA = [
 			
 		],
         readMoreLink: "https://www.sewcanshe.com/blog/how-to-do-easy-straight-line-quilting-4-ways",
-        pic: Sewing2
+        pic: "/assets/sewing2.jpg"
 							
 	},							
 	{						
@@ -47,7 +43,7 @@ const ARTICLE_DATA = [
 			 
 		],
         readMoreLink: "https://suzyquilts.com/best-quilting-rulers/",
-		pic: Sewing3 
+		pic: "/assets/sewing3.jpg" 
 						
 	},					
 	{				
@@ -63,7 +59,7 @@ const ARTICLE_DATA = [
 				
 		],
         readMoreLink: "https://quiltdom.com/best-sewing-machine-quilting/",
-		pic: Sewing4 
+		pic: "/assets/quilt4.jpg" 
 								
 	}
 
