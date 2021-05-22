@@ -200,3 +200,19 @@ $lightColoredText: rgb(158, 154, 154);
   font-weight: bold;
   text-align: center;
 }
+
+//FAW
+
+.faqStyles .accordion-title {
+  font-size: 3rem;
+  font-family: $secondaryFont;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin: 20px 0px 20px 0px;
+  background-color: $backgroundClr;
+}
+
+.faqInner {
+  font-size: 36px;
+}

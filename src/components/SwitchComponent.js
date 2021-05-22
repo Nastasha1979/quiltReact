@@ -6,6 +6,7 @@ import Classes from "./ClassesComponent";
 import Inspiration from "./InspirationComponent";
 import Articles from "./ArticlesComponent";
 import QuickTips from "./QuickTipsComponent";
+import FrequentlyAsked from "./FrequentlyAsked";
 import QUICK_TIPS from "../shared/QuickTips";
 import ARTICLES_DATA from "../shared/ArticleData";
 import CAROUSEL_DATA from "../shared/CarouselData";
@@ -38,6 +39,7 @@ class SwitchComponent extends Component {
                     <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
                     <Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} />
                     <Route exact path="/quickTips" render={() => <QuickTips quickTips={this.state.quickTips} />} />
+                    <Route exact path="/faq" render={() => <FrequentlyAsked faqs={this.state.faqs} />} />
                 </Switch>
                 <Footer />
             </React.Fragment>

@@ -12,7 +12,7 @@ const FREQUENTLY_ASKED = [
     {
         key: 2,
         question: "Where can I find my information?",
-        answer: "If you created an account, all of your information, including courses and favorited content, can be found in your account page. You can also update your profile and payment methods on the account page."
+        answer: "If you created an account, all of your information, including courses and favorite content, can be found in your account page. You can also update your profile and payment methods on the account page."
     },
     {
         key: 3,
