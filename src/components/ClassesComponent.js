@@ -33,6 +33,8 @@ function GetFirstClasses({classRoom}) {
 
 
 function Classes(props){
+    
+
     const showClass = props.classes.map(classRoom => {
         return(
             <div key={classRoom.id}>

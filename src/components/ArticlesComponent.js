@@ -8,7 +8,7 @@ import classnames from 'classnames';
 function GetPanel({article}) {
     const fullText = article.text.map(para => {
         return(
-            <p>{para}</p>
+            <p className="d-none d-md-block">{para}</p>
         );
     });
 
@@ -18,10 +18,10 @@ function GetPanel({article}) {
                 <Media object src={article.pic} alt="ERROR Loading" className="pr-2 justify-content-center d-none d-lg-block"/>
             </Media>
             <Media body>
-                <div className="d-none d-lg-block">
+                <div >
                     {fullText}
                 </div>
-                <Link href={article.readMoreLink} target="_blank">Read Full Article...</Link>
+                <a href={article.readMoreLink} target="_blank">Read Full Article...</a>
             </Media>
         </Media>
         

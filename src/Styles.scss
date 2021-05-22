@@ -22,6 +22,19 @@ $lightColoredText: rgb(158, 154, 154);
   
 }
 
+.phoneHeader {
+  background-color: $backgroundClr;
+}
+
+.phoneHeader h1 {
+  font-family: $thirdFont;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+}
+
 .btnStyles {
   background-color: $backgroundClr;
   color: black;
@@ -77,7 +90,7 @@ $lightColoredText: rgb(158, 154, 154);
 
 .textCont {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(248, 244, 238);
@@ -88,6 +101,7 @@ $lightColoredText: rgb(158, 154, 154);
     h1 {
       font-family: $thirdFont;
       text-align: center;
+      font-size: 4rem;
     }
 
     h5 {
@@ -216,3 +230,38 @@ $lightColoredText: rgb(158, 154, 154);
 .faqInner {
   font-size: 36px;
 }
+
+//Newsletter  
+
+.newsletterStyles input,
+.newsletterStyles button {
+    font-size: 24px;
+    border-radius: 0;
+}
+
+.newsletterStyles button {
+    padding: 5px 75px 5px 75px;
+}
+
+//About
+
+.myImage {
+  height: 100%;
+  width: 50%;
+  right: 0;
+}
+
+.mediaBodyStyle h3 {
+    padding: 20px 0px 10px 0px;
+    font-family: $secondaryFont;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.mediaBodyStyle address {
+  text-align: center;
+  font-family: $secondaryFont;
+  font-size: 1.5rem;
+}
+
+
