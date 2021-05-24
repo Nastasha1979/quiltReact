@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import NavItems from "../shared/NavBarItems";
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
@@ -12,8 +13,10 @@ class Navigation extends Component {
         super(props);
         this.toggleNav = this.toggleNav.bind(this);
         this.state = {
-            isNavOpen: false
+            isNavOpen: false,
+            navItems: NavItems
         };
+        this.getNavList = this.getNavList.bind(this);
     }
 
     toggleNav() {
@@ -22,10 +25,23 @@ class Navigation extends Component {
         });
     }
 
+    getNavList() {
+        const navTime = this.state.navItems.map(navItem =>  { 
+            return(
+                <React.Fragment>
+                    <NavItem key={navItem.key}>
+                        <NavLink className={navItem.classN} to={navItem.to}>{navItem.name}</NavLink>
+                    </NavItem>
+                    <span className="navItem d-none d-lg-block">|</span>
+                </React.Fragment>
+            );
+        });
+        
+        return navTime;
+    }
     
 
-    render() {
-        
+    render() {   
 
         return(
             <React.Fragment >
@@ -35,41 +51,7 @@ class Navigation extends Component {
                         <NavbarToggler onClick={this.toggleNav}><i class="fa fa-chevron-circle-down fa-3x"></i></NavbarToggler>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar className="ml-auto">
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/classes">Classes</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/inspiration">Inspiration</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/quickTips">Quick Tips</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/articles">Articles</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/newsletter">Newsletter</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/faq">FAQ</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/about">About</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/logIn">Log In</NavLink>
-                                </NavItem>
-                                <span className="navItem d-none d-lg-block">|</span>
-                                <NavItem>
-                                    <NavLink className="navItem mx-2" to="/createAccount">CreateAccount</NavLink>
-                                </NavItem>
+                                {this.getNavList()} 
                             </Nav>
                         </Collapse>
                     </div>

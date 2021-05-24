@@ -14,6 +14,8 @@ import ARTICLES_DATA from "../shared/ArticleData";
 import CAROUSEL_DATA from "../shared/CarouselData";
 import FREQUENTLY_ASKED from "../shared/FrequentlyAsked";
 import CLASSES_DATA from "../shared/ClassesData";
+import TodoList from "./TestComponent";
+import { Transition } from "react-transition-group";
 
 
 class SwitchComponent extends Component {
@@ -24,7 +26,8 @@ class SwitchComponent extends Component {
             carousels: CAROUSEL_DATA,
             quickTips: QUICK_TIPS,
             faqs: FREQUENTLY_ASKED,
-            classes: CLASSES_DATA
+            classes: CLASSES_DATA,
+            
         };
         
     }
@@ -49,6 +52,7 @@ class SwitchComponent extends Component {
                     <Route path="/about" component={About} />
                 </Switch>
                 <Footer />
+                <TodoList />
             </React.Fragment>
         );
     }
