@@ -265,4 +265,11 @@ $lightColoredText: rgb(158, 154, 154);
   font-size: 1.5rem;
 }
 
+//To Fix Scrolling Issues when Modal Content Opens //////////////
+body.modal-open {
+  width: 100% !important;
+  padding-right: 0 !important;
+  overflow-y: scroll !important;
+}
+/////////////////////////////////////////
 

@@ -40,19 +40,8 @@ const NavItems = [
         name: "About",
         to: "/about",
         classN: "navItem mx-2"
-    },
-    {
-        key: 8,
-        name: "Log In",
-        to: "/logIn",
-        classN: "navItem mx-2"
-    },
-    {
-        key: 1,
-        name: "Create Account",
-        to: "/createAccount",
-        classN: "navItem mx-2"
     }
+    
 
 ];
 
