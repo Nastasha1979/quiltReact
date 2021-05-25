@@ -6,6 +6,7 @@ $thirdFont: "Sacramento", cursive;
 $lightColoredText: rgb(158, 154, 154);
 
 
+
 .mainHeader {
   font-family: $thirdFont;
   font-size: 4rem;
@@ -80,7 +81,7 @@ $lightColoredText: rgb(158, 154, 154);
 }
 
 .topImage {
-  max-height: 100%;
+  max-height: 650px;
   width: 100%;
   background-size: cover;
 
