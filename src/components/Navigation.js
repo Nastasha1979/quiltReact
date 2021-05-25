@@ -123,11 +123,9 @@ class Navigation extends Component {
                             <Nav navbar className="ml-auto">
                                 {this.getNavList()}                                
                             </Nav>
-                            <span>
-                                <Button onClick={this.toggleModalLog}>Log In</Button> 
-                                <Button onClick={this.toggleModalCreate}>Create Account</Button>
-                            </span>
-                            
+                            <Link className="navItem mx-2" onClick={this.toggleModalLog}>Log In</Link><br/>
+                            <span className="navItem d-none d-lg-block">|</span> 
+                            <Link className="navItem mx-2" onClick={this.toggleModalCreate}>Create Account</Link>   
                         </Collapse>
                     </div>
                 </Navbar>
@@ -163,9 +161,11 @@ class Navigation extends Component {
                                 innerRef={input => this.password = input} />
                             </FormGroup>
                             <FormGroup>
-                                <p>Don't have an account?<Link onClick={this.switchModal}>Create Account</Link> here.</p>
+                                <p>Don't have an account?<Link onClick={this.switchModal}> Create Account</Link> here.</p>
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Log In</Button>
+                            <FormGroup className="text-right">
+                                <Button type="submit" value="submit">Log In</Button>
+                            </FormGroup>
                         </Form>    
                     </ModalBody>
                 </Modal>
@@ -206,8 +206,9 @@ class Navigation extends Component {
                             <FormGroup>
                                 <p>Already a member?<Link onClick={this.switchModal}> Log In</Link> here.</p>
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Log In</Button>
-                            <Button type="dismiss" color="secondary">Cancel</Button>
+                            <FormGroup className="text-right">
+                                <Button type="submit" value="submit" className="btnStyles">Create Account</Button>
+                            </FormGroup>
                         </Form>
                     </ModalBody>
                 </Modal>

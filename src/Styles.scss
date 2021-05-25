@@ -36,10 +36,10 @@ $lightColoredText: rgb(158, 154, 154);
   padding: 20px;
 }
 
-.btnStyles {
-  background-color: $backgroundClr;
-  color: black;
-  font-weight: bold;
+Button {
+  background-color: $backgroundClr !important; 
+  color: black !important;
+  font-weight: bold !important;
 }
 
 .App-header {
@@ -273,3 +273,7 @@ body.modal-open {
 }
 /////////////////////////////////////////
 
+//Modal Styles
+.modal-header {
+  background-color: $backgroundClr;
+}

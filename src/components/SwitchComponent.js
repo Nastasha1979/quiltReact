@@ -28,7 +28,7 @@ class SwitchComponent extends Component {
             quickTips: QUICK_TIPS,
             faqs: FREQUENTLY_ASKED,
             classes: CLASSES_DATA,
-            fade: true
+            
         };
         
     }
@@ -36,7 +36,7 @@ class SwitchComponent extends Component {
 
     render() {
 
-        const fadeIn = this.state.fade;
+        
         
         return(
             <React.Fragment>
@@ -44,7 +44,7 @@ class SwitchComponent extends Component {
                 <Switch>                   
                     <Route exact path="/classes" render={() => <Classes classes={this.state.classes} />} />                   
                     <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
-                    <Fade in={fadeIn}><Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} /></Fade>
+                    <Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} />
                     <Route exact path="/quickTips" render={() => <QuickTips quickTips={this.state.quickTips} />} />
                     <Route exact path="/faq" render={() => <FrequentlyAsked faqs={this.state.faqs} />} />                    
                 </Switch>

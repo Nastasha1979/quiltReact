@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Fade } from 'reactstrap';
 
 
 /*******toDo**********
@@ -7,20 +7,22 @@ import { Collapse, Button, CardBody, Card } from 'reactstrap';
  *****************/
 function GetFAQ({faq}){
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
+    const [fadeIn] = useState(true);
 
     return(
         <React.Fragment>
-            <div className="accordion-item" key={faq.key}>
-                <div className="accordion-title" onClick={() => setIsOpen(!isOpen)}>
-                    <div>{faq.question} {isOpen ? "-" : "+"}</div>
+            <Fade in={fadeIn}>
+                <div className="accordion-item" key={faq.key}>
+                    <div className="accordion-title" onClick={() => setIsOpen(!isOpen)}>
+                        <div>{faq.question} {isOpen ? "-" : "+"}</div>
+                    </div>
+                    {isOpen && 
+                        <div className="accordion-content faqInner py-2">{faq.answer}</div>
+                    }
+                    
                 </div>
-                {isOpen && 
-                    <div className="accordion-content faqInner py-2">{faq.answer}</div>
-                }
-                
-            </div>
+            </Fade>
         </React.Fragment>
     );
 }
@@ -30,6 +32,7 @@ We're also showing the + or - sign depending on the value of isActive using the 
 And if the isActive state value is true then we're only showing the accordion content as shown below*/ 
 
 function FrequentlyAsked(props){
+    
 
     const facts = props.faqs.map(faq => {
         return (

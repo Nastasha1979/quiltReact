@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Fade } from 'reactstrap';
 
 
 /*******toDo**********
@@ -7,29 +7,28 @@ import { Collapse, Button, CardBody, Card } from 'reactstrap';
  *****************/
 function GetTips({quickTip}){
     const [isOpen, setIsOpen] = useState(false);
-
+    const [fadeIn] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
     return(
         <React.Fragment>
-            <div className="accordion-item" key={quickTip.key}>
-                <div className="accordion-title" onClick={() => setIsOpen(!isOpen)}>
-                    <div>{quickTip.topTitle} {isOpen ? "-" : "+"}</div>
+            <Fade in={fadeIn}>
+                <div className="accordion-item" key={quickTip.key}>
+                    <div className="accordion-title" onClick={() => setIsOpen(!isOpen)}>
+                        <div>{quickTip.topTitle} {isOpen ? "-" : "+"}</div>
+                    </div>
+                    {isOpen && 
+                        <div className="accordion-content quickTipsInner py-2">{quickTip.innerTitle}</div>
+                    }
+                    {isOpen && 
+                        <div className="accordion-content">{quickTip.videoFrame}</div>
+                    }
                 </div>
-                {isOpen && 
-                    <div className="accordion-content quickTipsInner py-2">{quickTip.innerTitle}</div>
-                }
-                {isOpen && 
-                    <div className="accordion-content">{quickTip.videoFrame}</div>
-                }
-            </div>
+            </Fade>
         </React.Fragment>
     );
 }
 
-/*Here, we're inverting the isActive state value when we click on the accordion-title div. If the value of isActive is false, we're setting it to true and vice-versa.
-We're also showing the + or - sign depending on the value of isActive using the ternary operator.
-And if the isActive state value is true then we're only showing the accordion content as shown below*/ 
 
 function QuickTips(props){
 
