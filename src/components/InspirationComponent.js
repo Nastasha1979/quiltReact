@@ -6,6 +6,11 @@ import {
   CarouselCaption,
   Container
 } from 'reactstrap';
+import {
+  GlassMagnifier,
+  MOUSE_ACTIVATION,
+  TOUCH_ACTIVATION
+} from "react-image-magnifiers";
 
 
 
@@ -37,7 +42,14 @@ import {
           onExited={() => setAnimating(false)}
           key={inspire.src}
         >
-          <img src={inspire.src} alt={inspire.altText} className="carouselImg"  />
+          <GlassMagnifier
+            imageSrc={inspire.src}
+            imageAlt={inspire.altText}
+            mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK}
+            touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP}
+            className="carouselImg"
+          />
+          
           <CarouselCaption captionText={inspire.caption} captionHeader={inspire.caption} />
         </CarouselItem>
       );
@@ -53,6 +65,7 @@ import {
             next={next}
             previous={previous}
             className="carouselStyle mx-auto"
+            pause="hover"
           >
             
             {slides}
