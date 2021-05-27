@@ -1,20 +1,56 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, FormFeedback, Row, Col } from "reactstrap";
 
 
 class Newsletter extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            email: "",
+            fName: "",
+            touched: {
+                email: false
+            }
+        }
         
         this.handleLogin = this.handleLogin.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleLogin(event) {
-        alert(`First Name: ${this.fname.value}  Email: ${this.email.value}`);
+        alert(`First Name: ${this.state.fname}  Email: ${this.state.email}`);
         event.preventDefault();
     }
 
+    handleBlur = (field) => () => {
+        this.setState({
+            touched: {...this.state.touched, [field]: true}
+        });
+    }
+
+    validate(email) {
+        const errors = {
+            email: " "
+        };
+
+        if(this.state.touched.email && !email.includes("@")){
+            errors.email = "Email should contain a @";
+        }
+
+        return errors;
+    }
+
+    handleInputChange(event){
+        const target = event.target;
+        const name = target.name;
+        const value = target.value;
+        this.setState({
+            [name]: value
+        });
+    }
+
     render() {
+        const errors = this.validate(this.state.email);
     return(
         <React.Fragment>
             <div className="container-fluid newsletterStyles py-5">
@@ -34,14 +70,21 @@ class Newsletter extends Component {
                             <FormGroup>
                                 <Label className="d-none" htmlFor="fname" />
                                 <Input type="text" name="fname" id="fname" placeholder="First Name" 
-                                innerRef={input => this.fname = input} />
+                                    value={this.state.fname} 
+                                    onChange={this.handleInputChange}
+                                    />
                             </FormGroup>
                         </Col>
                         <Col lg={3}>
                             <FormGroup>
                                 <Label className="d-none" htmlFor="email" />
-                                <Input type="email" name="email" id="email" placeholder="Email" required 
-                                innerRef={input => this.email = input}/>
+                                <Input type="text" name="email" id="email" placeholder="Quilter@Email" 
+                                    value={this.state.email}
+                                    onBlur={this.handleBlur("email")}
+                                    invalid={errors.email}
+                                    onChange={this.handleInputChange}
+                                />
+                                <FormFeedback>{errors.email}</FormFeedback>
                             </FormGroup>   
                         </Col>
                         <Col lg={3}>

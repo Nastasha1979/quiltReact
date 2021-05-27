@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Modal, ModalBody, ModalHeader, Button } from "reactstrap";
+import { Modal, ModalBody, ModalHeader, Button, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
 import { Link } from "react-router-dom";
 
 
@@ -11,12 +11,26 @@ class Footer extends Component {
     constructor(props){
         super(props);
         this.state ={
+            fName: "",
+            phone: "",
+            email: "",
+            contactText: "",
             isTermsModalOpen: false,
-            isPrivacyModalOpen: false
+            isPrivacyModalOpen: false,
+            isContactModalOpen: false,
+            touched: {
+                fName: false,
+                phone: false,
+                email: false,
+            }
         }
         this.toggleTerms = this.toggleTerms.bind(this);
         this.togglePrivacy = this.togglePrivacy.bind(this);
-
+        this.toggleContact = this.toggleContact.bind(this);
+        this.handleEmailClick = this.handleEmailClick.bind(this);
+        this.handlePhoneClick = this.handlePhoneClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     toggleTerms() {
@@ -31,11 +45,98 @@ class Footer extends Component {
         });
     }
 
+    toggleContact() {
+        this.setState({
+            isContactModalOpen: !this.state.isContactModalOpen
+        });
+    }
+
+    handleEmailClick() {
+        let e = document.getElementById("emailStuff");
+        let p = document.getElementById("phoneStuff");
+
+        if(e.classList.contains("d-none")) {
+            e.classList.remove("d-none");
+            p.classList.add("d-none");
+            this.setState({phone: " "});
+        } else {
+            e.classList.add("d-none");
+            p.classList.remove("d-none");
+            this.setState({email: " "});
+        }
+        
+    }
+
+    handlePhoneClick() {
+        let e = document.getElementById("emailStuff");
+        let p = document.getElementById("phoneStuff");
+
+        if(p.classList.contains("d-none")) {
+            p.classList.remove("d-none");
+            e.classList.add("d-none");
+            this.setState({email: " "});
+        } else {
+            p.classList.add("d-none");
+            e.classList.remove("d-none");
+            this.setState({phone: " "});
+        }
+    }
+
+    handleSubmit(event) {
+        alert(`You input: ${this.state.fName}, ${this.state.phone}, ${this.state.email}, ${this.state.contactText}. Thanks!`);
+        event.preventDefault();
+    }
+
+    validate(fName, phone, email) {
+        const errors = {
+            fName: " ",
+            phone: " ",
+            email: " "
+        };
+
+        if(this.state.touched.fName) {
+            if(fName.length < 2) {
+                errors.fName = "First name must be at least 2 characters.";
+            } else if (fName.length > 20) {
+                errors.fName = "First name must be less than 20 characters.";
+            }
+        }
+
+        const reg = /^\d+$/;
+        if(this.state.touched.phone && !reg.test(phone)) {
+            errors.phone = "The phone number must contain only numbers";
+        }
+
+        if(this.state.touched.email && !email.includes("@")){
+            errors.email = "Email should contain an @";
+        }
+
+        return errors;
+    }
+
+    handleInputChange(event){
+        const target = event.target;
+        const name = target.name;
+        const value = target.value;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleBlur = (field) => () => {
+        this.setState({
+            touched: {...this.state.touched, [field]: true}
+        });
+    }
+
     render(){
+
+        const errors = this.validate(this.state.fName, this.state.phone, this.state.email);
+
         return (
             <React.Fragment>
                 <footer>
-                    <div class="container-fluid footerStyles">
+                    <div class="container-fluid footerStyles pb-4">
                         <div class="row pt-3">
                             <div class="col-12 text-center">
                                 <h1 class="logoStyle">Needle & Thread</h1>
@@ -51,15 +152,16 @@ class Footer extends Component {
                             <div class="col-6 text-center">
                                     <a href="#" class="footerLink mx-2">About</a>
                                     <span className="footBarSpan">|</span>
-                                    <a data-toggle="modal" data-target="#contactUsModal" class="footerLink mx-2">Contact</a>
+                                    <Link  onClick={this.toggleContact}>Contact</Link>
                                     <span className="footBarSpan">|</span>
-                                    <Link class="footerLink mx-2" onClick={this.togglePrivacy}>Privacy</Link>
+                                    <Link  onClick={this.togglePrivacy}>Privacy</Link>
                                     <span className="footBarSpan">|</span>
-                                    <Link class="footerLink mx-2" onClick={this.toggleTerms}>Terms</Link>
+                                    <Link  onClick={this.toggleTerms}>Terms</Link>
                             </div>
                         </div>
                     </div>
                 </footer>
+                
                 <Modal isOpen={this.state.isTermsModalOpen} toggle={this.toggleTerms}>
                     <ModalHeader toggle={this.toggleTerms}>
                         <h1 className="logoStyle">Needle & Thread</h1>
@@ -189,7 +291,7 @@ class Footer extends Component {
                             
                             
                         </div>
-                        <button class="btn btn-secondary" toggle={this.toggleTerms}>Close</button>
+                        <Button onClick={this.toggleTerms}>Close</Button>
                     </ModalBody>    
                 </Modal>
 
@@ -199,9 +301,106 @@ class Footer extends Component {
                             Privacy Policy
                     </ModalHeader>
                     <ModalBody>
-                        Privacy Modal Body
+                        <div class="container-fluid">
+                            <p>At Needle & Thread, accessible from Needle & Thread.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Needle & Thread and how we use it.</p>
+
+                            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+
+                            <h2>Log Files</h2>
+
+                            <p>Needle & Thread follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created with the help of the <a href="https://www.privacypolicyonline.com/privacy-policy-generator/">Privacy Policy Generator</a> and the <a href="https://www.generateprivacypolicy.com">Privacy Policy Generator</a>.</p>
+
+                            <h2>Privacy Policies</h2>
+
+                            <p>You may consult this list to find the Privacy Policy for each of the advertising partners of Needle & Thread.</p>
+
+                            <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Needle & Thread, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+
+                            <p>Note that Needle & Thread has no access to or control over these cookies that are used by third-party advertisers.</p>
+
+                            <h2>Third Party Privacy Policies</h2>
+
+                            <p>Needle & Thread's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+
+                            <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</p>
+
+                            <h2>Children's Information</h2>
+
+                            <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+
+                            <p>Needle & Thread does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+                            <h2>Online Privacy Policy Only</h2>
+
+                            <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Needle & Thread. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+
+                            <h2>Consent</h2>
+
+                            <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
+
+                            <p>Source: <a>https://www.privacypolicyonline.com/</a></p>      
+                    </div>
+                    <Button onClick={this.togglePrivacy}>Close</Button>
                     </ModalBody>
                 </Modal>
+
+                <Modal isOpen={this.state.isContactModalOpen} toggle={this.toggleContact}>
+                    <ModalHeader toggle={this.toggleContact} className="d-block text-center">
+                        <h1 className="logoStyle">Needle & Thread</h1>
+                            Contact Us
+                    </ModalHeader>
+                    <ModalBody>
+                        <Form onSubmit={this.handleSubmit}>
+                            <FormGroup>
+                                <Label htmlFor="fName">First Name</Label>
+                                <Input type="text" name="fName" id="fName" 
+                                value={this.state.fName}
+                                invalid={errors.fName}
+                                onBlur={this.handleBlur("fName")}
+                                onChange={this.handleInputChange} 
+                                />
+                                <FormFeedback>{errors.fName}</FormFeedback>
+                            </FormGroup>
+                            <FormGroup role="group" aria-label="How to Contact">
+                                <Label>How should we contact you?</Label>
+                                    <FormGroup className="btn-group ml-5">
+                                        <button type="button" class="btn btn-secondary" onClick={this.handleEmailClick}>Email</button>
+                                        <button type="button" class="btn btn-dark" onClick={this.handlePhoneClick}>Phone</button>
+                                    </FormGroup>
+                            </FormGroup>
+                            <FormGroup className="d-none" id="emailStuff">
+                                <Label htmlFor="email">Email</Label>
+                                <Input type="email" name="email" id="email" 
+                                    value={this.state.email}
+                                    invalid={errors.email}
+                                    onBlur={this.handleBlur("email")}
+                                    onChange={this.handleInputChange}
+                                />
+                                <FormFeedback>{errors.email}</FormFeedback>
+                            </FormGroup>
+                            <FormGroup className="d-none" id="phoneStuff">
+                                <Label htmlFor="phone">Phone</Label>
+                                <Input type="tel" name="phone" id="phone" 
+                                    value={this.state.phone}
+                                    invalid={errors.phone}
+                                    onBlur={this.handleBlur("phone")}
+                                    onChange={this.handleInputChange}
+                                />
+                                <FormFeedback>{errors.phone}</FormFeedback>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="contactText">Message</Label>
+                                <textarea name="contactText" id="contactText" rows="6" placeholder="How can we help you?" 
+                                value={this.state.contactText}
+                                onChange={this.handleInputChange}
+                                />
+                            </FormGroup>
+                            <Button onClick={this.toggleContact}>Close</Button>
+                            <Button type="submit" color="primary" onClick={this.toggleContact}>Submit</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
+                
 
             </React.Fragment>
         );
