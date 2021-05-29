@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Fade } from 'reactstrap';
+import { Fade, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 
 /*******toDo**********
@@ -52,16 +52,26 @@ function FrequentlyAsked(props){
                         <div class="col-8 m-auto text-center text-muted pb-5">
                             <h5 className="subHeader">Check our FAQ's for answers to commonly asked questions</h5>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="accordion faqStyles">
-                                {facts}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
+                    </div>                    
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="accordion faqStyles">
+                                        {facts}
+                                    </div>
+                                </div>
+                            </div>   
+                    {/* <div className="row justify-content-center">
                         <button href="" className="btn btn-lg btnStyles my-3">See More</button>
+                    </div> */}
+                    <div className="mx-auto">
+                        <Pagination >
+                            <PaginationItem>
+                                <PaginationLink first>1</PaginationLink>
+                            </PaginationItem>
+                            <PaginationItem>
+                                <PaginationLink>2</PaginationLink>
+                            </PaginationItem>
+                        </Pagination>
                     </div>
                 </div>
             </React.Fragment>

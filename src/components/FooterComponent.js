@@ -89,9 +89,9 @@ class Footer extends Component {
 
     validate(fName, phone, email) {
         const errors = {
-            fName: " ",
-            phone: " ",
-            email: " "
+            fName: "",
+            phone: "",
+            email: ""
         };
 
         if(this.state.touched.fName) {
@@ -150,13 +150,13 @@ class Footer extends Component {
                                     <a class="btn btn-social-icon btn-pinterest socialStyles"><i class="fa fa-youtube"></i></a>
                             </div>
                             <div class="col-6 text-center">
-                                    <a href="#" class="footerLink mx-2">About</a>
+                                    <Link className="footerLink" to="/about#aboutComp">About </Link>
                                     <span className="footBarSpan">|</span>
-                                    <Link  onClick={this.toggleContact}>Contact</Link>
+                                    <Link className="footerLink" onClick={this.toggleContact}> Contact </Link>
                                     <span className="footBarSpan">|</span>
-                                    <Link  onClick={this.togglePrivacy}>Privacy</Link>
+                                    <Link className="footerLink" onClick={this.togglePrivacy}> Privacy </Link>
                                     <span className="footBarSpan">|</span>
-                                    <Link  onClick={this.toggleTerms}>Terms</Link>
+                                    <Link className="footerLink" onClick={this.toggleTerms}> Terms</Link>
                             </div>
                         </div>
                     </div>

@@ -23,6 +23,11 @@ function GetTips({quickTip}){
                     {isOpen && 
                         <div className="accordion-content">{quickTip.videoFrame}</div>
                     }
+                    {isOpen &&
+                    <div className="d-block d-md-none text-center">
+                        <a href={quickTip.videoLink}>Click Link for Video</a>
+                    </div>
+                    }
                 </div>
             </Fade>
         </React.Fragment>
@@ -57,9 +62,6 @@ function QuickTips(props){
                                 {newAccord}
                             </div>
                         </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <button href="" className="btn btn-lg btnStyles my-3">See More</button>
                     </div>
                 </div>
             </React.Fragment>

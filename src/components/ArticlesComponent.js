@@ -18,13 +18,16 @@ function GetPanel({article}) {
       <Fade in={fadeIn}>
         <Media className="articleMediaStyle" key={article.key}>
             <Media left>
-                <Media object src={article.pic} alt="ERROR Loading" className="pr-2 justify-content-center d-none d-lg-block"/>
+                <Media object src={article.pic} alt="Image associated with Article" className="pr-2 justify-content-center d-none d-lg-block"/>
             </Media>
             <Media body>
-                <div >
-                    {fullText}
+                <div>
+                  {fullText}
+                  <div className="fullArticleLink">
+                    <a href={article.readMoreLink} target="_blank" >Read Full Article...</a>
+                  </div>
                 </div>
-                <a href={article.readMoreLink} target="_blank">Read Full Article...</a>
+                
             </Media>
         </Media>
       </Fade>
@@ -115,11 +118,9 @@ const Articles = (props) => {
                   </Col>
               </Row>
               <Row>
-                  <Media>
                       <Col sm="12">
                           {texts}
                       </Col>
-                  </Media>
               </Row>
           </TabPane>
           <TabPane tabId="3">
@@ -129,11 +130,9 @@ const Articles = (props) => {
                   </Col>
               </Row>
               <Row>
-                  <Media>
                       <Col sm="12">
                           {texts}
                       </Col>
-                  </Media>
               </Row>
           </TabPane>
           <TabPane tabId="4">
@@ -143,11 +142,9 @@ const Articles = (props) => {
                   </Col>
               </Row>
               <Row>
-                  <Media>
                       <Col sm="12">
                           {texts}
                       </Col>
-                  </Media>
               </Row>
           </TabPane>
         </TabContent>

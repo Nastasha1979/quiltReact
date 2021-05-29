@@ -13,11 +13,11 @@ class Newsletter extends Component {
             }
         }
         
-        this.handleLogin = this.handleLogin.bind(this);
+        this.handleSignUp = this.handleSignUp.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleLogin(event) {
+    handleSignUp(event) {
         alert(`First Name: ${this.state.fname}  Email: ${this.state.email}`);
         event.preventDefault();
     }
@@ -30,7 +30,7 @@ class Newsletter extends Component {
 
     validate(email) {
         const errors = {
-            email: " "
+            email: ""
         };
 
         if(this.state.touched.email && !email.includes("@")){
@@ -64,7 +64,7 @@ class Newsletter extends Component {
                         <h5 className="subHeader">Sign-up for our free newsletter to get tips, articles, and course notifications straight to you inbox. It's like your own personal quilt instructor.</h5>
                     </div>
                 </div>
-                <Form className="justify-content-center mx-auto" onSubmit={this.handleLogin}>
+                <Form className="justify-content-center mx-auto" onSubmit={this.handleSignUp}>
                     <Row className="justify-content-center">
                         <Col lg={3}>
                             <FormGroup>
@@ -78,7 +78,7 @@ class Newsletter extends Component {
                         <Col lg={3}>
                             <FormGroup>
                                 <Label className="d-none" htmlFor="email" />
-                                <Input type="text" name="email" id="email" placeholder="Quilter@Email" 
+                                <Input type="text" name="email" id="email" placeholder="Quilter@Email.com" 
                                     value={this.state.email}
                                     onBlur={this.handleBlur("email")}
                                     invalid={errors.email}

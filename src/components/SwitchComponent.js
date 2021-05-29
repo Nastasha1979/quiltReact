@@ -19,6 +19,7 @@ import { Fade } from "reactstrap";
 
 
 
+
 class SwitchComponent extends Component {
     constructor(props) {
         super(props);
@@ -27,7 +28,6 @@ class SwitchComponent extends Component {
             carousels: CAROUSEL_DATA,
             quickTips: QUICK_TIPS,
             faqs: FREQUENTLY_ASKED,
-            
             
         };
         
@@ -42,9 +42,9 @@ class SwitchComponent extends Component {
         
         return(
             <React.Fragment>
-                <Navigation /> 
+                <Navigation />
                 <Switch>                 
-                    <Route exact path="/classes" render={() => <Classes classes={this.state.classes} />} />                   
+                    <Route exact path="/classes" component={Classes} />                   
                     <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
                     <Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} />
                     <Route exact path="/quickTips" render={() => <QuickTips quickTips={this.state.quickTips} />} />
