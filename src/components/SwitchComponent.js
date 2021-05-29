@@ -27,7 +27,7 @@ class SwitchComponent extends Component {
             carousels: CAROUSEL_DATA,
             quickTips: QUICK_TIPS,
             faqs: FREQUENTLY_ASKED,
-            classes: CLASSES_DATA,
+            
             
         };
         

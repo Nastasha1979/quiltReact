@@ -104,14 +104,17 @@ class Navigation extends Component {
 
     getNavList() {
         const navTime = this.state.navItems.map(navItem =>  {
+
+            
             
             return(
                 <React.Fragment>
                     <NavItem key={navItem.key}>
-                        <Link 
+                        <Link      //This link is from react router hash link, not the react Router
                             className={navItem.classN} 
                             to={navItem.to}
-                            smooth                          
+                            smooth
+                            scroll={(el) => el.scrollIntoView({ block: 'center' })}                        
                         >
                             {navItem.name}
                         </Link>
