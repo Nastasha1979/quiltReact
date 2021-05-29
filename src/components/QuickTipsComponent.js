@@ -40,7 +40,7 @@ function QuickTips(props){
     
         return(
             <React.Fragment>
-                <div className="container-fluid pb-3">
+                <div className="container-fluid pb-3" id="quickTipsComp">
                     <div className="row">
                         <div class="col-12 text-center my-4">
                             <h2 className="mainHeader">Quick Tips</h2>

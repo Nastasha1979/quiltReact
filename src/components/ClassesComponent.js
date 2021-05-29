@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Media, Fade } from "reactstrap";
 
 
+
 /****************To Do************************
  * 
  * Consider making the whole thing a carousel for button functionality
@@ -14,7 +15,7 @@ function GetFirstClasses({classRoom}) {
     if(classRoom.key < 3) {
         return(
             
-                <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer">
+                <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer" id="classesComp">
                     <Fade in={fadeIn} >
                         <Media className="mediaStyles">
                             <Media left href="#" >
@@ -72,7 +73,7 @@ function Classes(props){
                     </div>
                 </div>
             </div>
-        
+      
       
     );
 }

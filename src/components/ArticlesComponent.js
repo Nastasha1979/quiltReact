@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 
 
+
 function GetPanel({article}) {
     const fullText = article.text.map(para => {
         return(
@@ -44,109 +45,111 @@ const Articles = (props) => {
   })
 
   return (
-    <div className="container-fluid articleContainer">
-        <div className="row">
-            <div className="col">
-                <h2 className="mainHeader my-2">Articles</h2>
-            </div>
-        </div>
-        <div className="row pb-5">
-            <div className="col">
-                <h5 className="text-muted subHeader">Stay up-to-date on the world of quilting with top experts from around the world.</h5>
-            </div>
-        </div>
-        
-      <Nav tabs>
-        <NavItem className="col-12 col-lg-3">
-          <NavLink
-            className={classnames({ active: activeTab === '1' })}
-            onClick={() => { toggle('1'); }}
-          >
-            Quilt Project Planning
-          </NavLink>
-        </NavItem>
-        <NavItem className="col-12 col-lg-3">
-          <NavLink
-            className={classnames({ active: activeTab === '2' })}
-            onClick={() => { toggle('2'); }}
-          >
-            Straight Line Quilting
-          </NavLink>
-        </NavItem>
-        <NavItem className="col-12 col-lg-3">
-          <NavLink
-            className={classnames({ active: activeTab === '3' })}
-            onClick={() => { toggle('3'); }}
-          >
-            The 4 Best Quilt Rulers
-          </NavLink>
-        </NavItem>
-        <NavItem className="col-12 col-lg-3">
-          <NavLink
-            className={classnames({ active: activeTab === '4' })}
-            onClick={() => { toggle('4'); }}
-          >
-            Five Best Sewing Machines
-          </NavLink>
-        </NavItem>
-      </Nav>
-      <TabContent activeTab={activeTab}>
-        <TabPane tabId="1">
-          <Row>
-            <Col sm="12" className="text-center">
-                <h4>Quilt Project Planning <small>Sherri McConnell</small></h4>
-            </Col>
-          </Row>
-          <Row> 
-            <Col sm="12">
-                {texts}
-            </Col>   
-          </Row>
-        </TabPane>
-        <TabPane tabId="2">
+    
+      <div className="container-fluid articleContainer" id="articlesComp">
+          <div className="row">
+              <div className="col">
+                  <h2 className="mainHeader my-2">Articles</h2>
+              </div>
+          </div>
+          <div className="row pb-5">
+              <div className="col">
+                  <h5 className="text-muted subHeader">Stay up-to-date on the world of quilting with top experts from around the world.</h5>
+              </div>
+          </div>
+          
+        <Nav tabs>
+          <NavItem className="col-12 col-lg-3">
+            <NavLink
+              className={classnames({ active: activeTab === '1' })}
+              onClick={() => { toggle('1'); }}
+            >
+              Quilt Project Planning
+            </NavLink>
+          </NavItem>
+          <NavItem className="col-12 col-lg-3">
+            <NavLink
+              className={classnames({ active: activeTab === '2' })}
+              onClick={() => { toggle('2'); }}
+            >
+              Straight Line Quilting
+            </NavLink>
+          </NavItem>
+          <NavItem className="col-12 col-lg-3">
+            <NavLink
+              className={classnames({ active: activeTab === '3' })}
+              onClick={() => { toggle('3'); }}
+            >
+              The 4 Best Quilt Rulers
+            </NavLink>
+          </NavItem>
+          <NavItem className="col-12 col-lg-3">
+            <NavLink
+              className={classnames({ active: activeTab === '4' })}
+              onClick={() => { toggle('4'); }}
+            >
+              Five Best Sewing Machines
+            </NavLink>
+          </NavItem>
+        </Nav>
+        <TabContent activeTab={activeTab}>
+          <TabPane tabId="1">
             <Row>
-                <Col sm="12" className="text-center">
-                    <h4>Straight Line Quilting <small>SewCanShe</small></h4>
-                </Col>
+              <Col sm="12" className="text-center">
+                  <h4>Quilt Project Planning <small>Sherri McConnell</small></h4>
+              </Col>
             </Row>
-            <Row>
-                <Media>
-                    <Col sm="12">
-                        {texts}
-                    </Col>
-                </Media>
+            <Row> 
+              <Col sm="12">
+                  {texts}
+              </Col>   
             </Row>
-        </TabPane>
-        <TabPane tabId="3">
-            <Row>
-                <Col sm="12" className="text-center">
-                    <h4>The 4 Best Quilting Rulers<small> Suzy Williams</small></h4>
-                </Col>
-            </Row>
-            <Row>
-                <Media>
-                    <Col sm="12">
-                        {texts}
-                    </Col>
-                </Media>
-            </Row>
-        </TabPane>
-        <TabPane tabId="4">
-            <Row>
-                <Col sm="12" className="text-center">
-                    <h4>Five Best Sewing Machines For Quilting<small> Keri Weichert</small></h4>
-                </Col>
-            </Row>
-            <Row>
-                <Media>
-                    <Col sm="12">
-                        {texts}
-                    </Col>
-                </Media>
-            </Row>
-        </TabPane>
-      </TabContent>
-    </div>
+          </TabPane>
+          <TabPane tabId="2">
+              <Row>
+                  <Col sm="12" className="text-center">
+                      <h4>Straight Line Quilting <small>SewCanShe</small></h4>
+                  </Col>
+              </Row>
+              <Row>
+                  <Media>
+                      <Col sm="12">
+                          {texts}
+                      </Col>
+                  </Media>
+              </Row>
+          </TabPane>
+          <TabPane tabId="3">
+              <Row>
+                  <Col sm="12" className="text-center">
+                      <h4>The 4 Best Quilting Rulers<small> Suzy Williams</small></h4>
+                  </Col>
+              </Row>
+              <Row>
+                  <Media>
+                      <Col sm="12">
+                          {texts}
+                      </Col>
+                  </Media>
+              </Row>
+          </TabPane>
+          <TabPane tabId="4">
+              <Row>
+                  <Col sm="12" className="text-center">
+                      <h4>Five Best Sewing Machines For Quilting<small> Keri Weichert</small></h4>
+                  </Col>
+              </Row>
+              <Row>
+                  <Media>
+                      <Col sm="12">
+                          {texts}
+                      </Col>
+                  </Media>
+              </Row>
+          </TabPane>
+        </TabContent>
+      </div>
+    
   );
 }
 

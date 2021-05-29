@@ -2,7 +2,13 @@ import React, {Component} from "react";
 import NavItems from "../shared/NavBarItems";
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Container, Modal, 
     ModalBody, ModalHeader, Button, Form, FormGroup, Input, Label } from "reactstrap";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+
+
+
+
+
 
 
 /********************************
@@ -29,6 +35,8 @@ class Navigation extends Component {
 
         
     }
+
+    
 
     toggleNav() {
         this.setState({
@@ -95,12 +103,19 @@ class Navigation extends Component {
     }
 
     getNavList() {
-        const navTime = this.state.navItems.map(navItem =>  { 
+        const navTime = this.state.navItems.map(navItem =>  {
+            
             return(
                 <React.Fragment>
                     <NavItem key={navItem.key}>
-                        <NavLink className={navItem.classN} to={navItem.to}>{navItem.name}</NavLink>
-                    </NavItem>
+                        <Link 
+                            className={navItem.classN} 
+                            to={navItem.to}
+                            smooth                          
+                        >
+                            {navItem.name}
+                        </Link>
+                    </NavItem>                    
                     <span className="navItem d-none d-lg-block">|</span>
                 </React.Fragment>
             );
@@ -111,7 +126,8 @@ class Navigation extends Component {
     
     
 
-    render() {   
+    render() {
+          
 
         return(
             <React.Fragment>
@@ -120,9 +136,11 @@ class Navigation extends Component {
                         <NavbarBrand className="logoStyle" href="/">Needle & Thread</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}><i class="fa fa-chevron-circle-down fa-3x"></i></NavbarToggler>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar className="ml-auto">
-                                {this.getNavList()}                                
-                            </Nav>
+                            
+                                <Nav navbar className="ml-auto">
+                                    {this.getNavList()}                                
+                                </Nav>
+                            
                             <Link className="navItem mx-2" onClick={this.toggleModalLog}>Log In</Link><br/>
                             <span className="navItem d-none d-lg-block">|</span> 
                             <Link className="navItem mx-2" onClick={this.toggleModalCreate}>Create Account</Link>   

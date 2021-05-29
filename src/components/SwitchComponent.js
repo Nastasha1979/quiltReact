@@ -33,6 +33,8 @@ class SwitchComponent extends Component {
         
     }
 
+    
+
 
     render() {
 
@@ -40,8 +42,8 @@ class SwitchComponent extends Component {
         
         return(
             <React.Fragment>
-                <Navigation />
-                <Switch>                   
+                <Navigation /> 
+                <Switch>                 
                     <Route exact path="/classes" render={() => <Classes classes={this.state.classes} />} />                   
                     <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
                     <Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} />

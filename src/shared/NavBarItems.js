@@ -2,44 +2,51 @@ const NavItems = [
     {
         key: 1,
         name: "Classes",
-        to: "/classes",
+        to: "/classes#classesComp",
         classN: "navItem mx-2"
+        
     },
     {
         key: 2,
         name: "Inspiration",
-        to: "/inspiration",
+        to: "/inspiration#inspirationComp",
         classN: "navItem mx-2"
+        
     },
     {
         key: 3,
         name: "Quick Tips",
-        to: "/quickTips",
+        to: "/quickTips#quickTipsComp",
         classN: "navItem mx-2"
+        
     },
     {
         key: 4,
         name: "Articles",
-        to: "/articles",
+        to: "/articles#articlesComp",
         classN: "navItem mx-2"
+        
     },
     {
         key: 5,
         name: "Newsletter",
-        to: "/newsletter",
+        to: "/newsletter#newsletterComp",
         classN: "navItem mx-2"
+        
     },
     {
         key: 6,
         name: "FAQ",
-        to: "/faq",
+        to: "/faq#FAQComp",
         classN: "navItem mx-2"
+        
     },
     {
         key: 7,
         name: "About",
-        to: "/about",
+        to: "/about#aboutComp",
         classN: "navItem mx-2"
+        
     }
     
 

@@ -10,7 +10,7 @@ function About () {
     return(
         <React.Fragment>
             <Fade in={fadeIn}>
-                <Media>
+                <Media id="aboutComp">
                     <Media body className="mediaBodyStyle">
                         <h2 className="mainHeader pt-3">About</h2>
                         <h5 className="subHeader text-muted">I am Nastasha Leach. Originally from Central Texas, I have lived in San Antonio since 2012.

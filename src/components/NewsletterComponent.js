@@ -53,7 +53,7 @@ class Newsletter extends Component {
         const errors = this.validate(this.state.email);
     return(
         <React.Fragment>
-            <div className="container-fluid newsletterStyles py-5">
+            <div className="container-fluid newsletterStyles py-5" id="newsletterComp">
                 <div className="row">
                     <div className="col-12 thirdFont text-center my-4">
                         <h2 className="mainHeader">Newsletter</h2>

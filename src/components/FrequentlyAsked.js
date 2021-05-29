@@ -42,7 +42,7 @@ function FrequentlyAsked(props){
     
         return(
             <React.Fragment>
-                <div className="container-fluid pb-3">
+                <div className="container-fluid pb-3" id="FAQComp">
                     <div className="row">
                         <div class="col-12 text-center my-4">
                             <h2 className="mainHeader">Frequently Asked Questions</h2>
