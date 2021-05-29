@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col, Media } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col, Media, Fade } from 'reactstrap';
 import { Link } from "react-router-dom";
 import classnames from 'classnames';
 
@@ -7,6 +7,7 @@ import classnames from 'classnames';
 
 
 function GetPanel({article}) {
+  const [fadeIn] = useState(true);
     const fullText = article.text.map(para => {
         return(
             <p className="d-none d-md-block">{para}</p>
@@ -14,6 +15,7 @@ function GetPanel({article}) {
     });
 
     return(
+      <Fade in={fadeIn}>
         <Media className="articleMediaStyle" key={article.key}>
             <Media left>
                 <Media object src={article.pic} alt="ERROR Loading" className="pr-2 justify-content-center d-none d-lg-block"/>
@@ -25,6 +27,7 @@ function GetPanel({article}) {
                 <a href={article.readMoreLink} target="_blank">Read Full Article...</a>
             </Media>
         </Media>
+      </Fade>
         
         
     );

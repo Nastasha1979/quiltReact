@@ -112,9 +112,7 @@ class Classes extends Component {
                         </div>
                         :
                         <div className="row py-5 mx-auto">
-                            
                                 {this.getSecondClasses()}
-                            
                         </div>
                     }
                     
