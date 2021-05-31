@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import NavItems from "../shared/NavBarItems";
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Container, Modal, 
-    ModalBody, ModalHeader, Button, Form, FormGroup, Input, Label } from "reactstrap";
+    ModalBody, ModalHeader, Button, Form, FormGroup, Input, Label, FormFeedback } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
+import { focusableElements } from "reactstrap/lib/utils";
 
 
 
@@ -23,7 +24,16 @@ class Navigation extends Component {
             isNavOpen: false,
             navItems: NavItems,
             isModalOpenLog: false,
-            isModalOpenCreate: false
+            isModalOpenCreate: false,
+            firstName: "",
+            lastName:  "",
+            username: "",
+            password: "",
+            newsletter: false,
+            touched: {
+                username: false,
+                password: false
+            }
           
         };
         this.getNavList = this.getNavList.bind(this);
@@ -92,14 +102,48 @@ class Navigation extends Component {
     }
 
     handleSubmitCreate(event){
-        alert(`First Name: ${this.firstName.value}\n
-               Last Name: ${this.lastName.value}\n
-               Username: ${this.username.value}\n
-               Password: ${this.password.value}\n
-               Newsletter Sign Up: ${this.news.checked}`    
+        alert(`First Name: ${this.state.firstName}\n
+               Last Name: ${this.state.lastName}\n
+               Username: ${this.state.username}\n
+               Password: ${this.state.password}\n
+               Newsletter Sign Up: ${this.state.newsletter}`    
             );
         this.toggleModalCreate();
         event.preventDefault();
+    }
+
+    handleBlur = (field) => () => {
+        this.setState({
+            touched: {...this.state.touched, [field]: true}
+        });
+    }
+
+    validate(username, password) {
+        const errors = {
+            username: "",
+            password: ""
+        };
+
+        if(this.state.touched.username && !username.includes("@")){
+            errors.username = "Username should contain a @";
+        }
+
+        const regPass = /^\w*[^_\s]{5,}$/;
+        if(this.state.touched.password && !regPass.test(password)){
+            errors.password = "Only lower case, upper case, numbers, and special characters allowed and must be at least 5 characters";
+        }
+
+        return errors;
+    }
+
+    handleInputChange = (event) => {
+        const target = event.target;
+        const name = target.name;
+        const value = target.type === "checkbox" ? target.checked : target.value;
+
+        this.setState({
+            [name]: value
+        });
     }
 
     getNavList() {
@@ -130,7 +174,7 @@ class Navigation extends Component {
     
 
     render() {
-          
+        const errors = this.validate(this.state.username, this.state.password);  
 
         return(
             <React.Fragment>
@@ -200,27 +244,56 @@ class Navigation extends Component {
                         <Form onSubmit={this.handleSubmitCreate}>
                             <FormGroup>
                                 <Label htmlFor="firstName">First Name: </Label>
-                                <Input type="text" id="firstName" name="firstName" 
-                                innerRef={input => this.firstName = input} />
+                                <Input 
+                                    type="text" 
+                                    name="firstName" 
+                                    id="firstName" 
+                                    value={this.state.firstName} 
+                                    onChange={this.handleInputChange}
+                                    />
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="lastName">Last Name: </Label>
-                                <Input type="text" id="lastName" name="lastName" 
-                                innerRef={input => this.lastName = input} />
+                                <Input 
+                                    type="text" 
+                                    name="lastName" 
+                                    id="lastName" 
+                                    value={this.state.lastName} 
+                                    onChange={this.handleInputChange}
+                                    />
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="username">Username: </Label>
-                                <Input type="text" id="username" name="username" 
-                                innerRef={input => this.username = input} />
+                                <Label htmlFor="username">Email: <small>Email will become your username</small></Label>
+                                <Input 
+                                    type="text" 
+                                    name="username" 
+                                    id="username"  
+                                    value={this.state.username}
+                                    onBlur={this.handleBlur("username")}
+                                    invalid={errors.username}
+                                    onChange={this.handleInputChange}
+                                />
+                                <FormFeedback>{errors.username}</FormFeedback>
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="password">Password: </Label>
-                                <Input type="password" id="password" name="password" 
-                                innerRef={input => this.password = input} />
+                                <Input 
+                                    type="text" 
+                                    name="password" 
+                                    id="password"  
+                                    value={this.state.password}
+                                    onBlur={this.handleBlur("password")}
+                                    invalid={errors.password}
+                                    onChange={this.handleInputChange}
+                                />
+                                <FormFeedback>{errors.password}</FormFeedback>
                             </FormGroup>
                             <FormGroup check className="text-right">
                                 <Label check>
-                                    <Input type="checkbox" name="news" innerRef={input => this.news = input} />
+                                <Input type="checkbox"
+                                        name="newsletter"
+                                        checked={this.state.newsletter}
+                                        onChange={this.handleInputChange} /> {' '}
                                     Sign Up for Newsletter? (It's free!)
                                 </Label>
                             </FormGroup>
