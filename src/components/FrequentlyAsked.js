@@ -19,22 +19,31 @@ function GetFAQ({faq}){
                     </div>
                     {isOpen && 
                         <div className="accordion-content faqInner py-2">{faq.answer}</div>
-                    }
-                    
+                    }  
                 </div>
             </Fade>
         </React.Fragment>
     );
 }
 
+
+
 /*Here, we're inverting the isActive state value when we click on the accordion-title div. If the value of isActive is false, we're setting it to true and vice-versa.
 We're also showing the + or - sign depending on the value of isActive using the ternary operator.
 And if the isActive state value is true then we're only showing the accordion content as shown below*/ 
 
 function FrequentlyAsked(props){
-    
+    const [isFirst, setFirst] = useState(true);
 
-    const facts = props.faqs.map(faq => {
+    const toggleFAQ = () => setFirst(!isFirst);
+
+    const facts = props.faqs.filter(faq => faq.key < 4).map(faq => {
+        return (
+            <GetFAQ faq={faq} />
+        );
+    })
+
+    const facts2 = props.faqs.filter(faq => faq.key >= 4).map(faq => {
         return (
             <GetFAQ faq={faq} />
         );
@@ -52,27 +61,24 @@ function FrequentlyAsked(props){
                         <div class="col-8 m-auto text-center text-muted pb-5">
                             <h5 className="subHeader">Check our FAQ's for answers to commonly asked questions</h5>
                         </div>
-                    </div>                    
-                            <div className="row">
-                                <div className="col-12">
+                    </div>                             
+                        <div className="row">
+                            <div className="col-12">
+                                { isFirst ? 
                                     <div className="accordion faqStyles">
                                         {facts}
                                     </div>
-                                </div>
-                            </div>   
-                    {/* <div className="row justify-content-center">
-                        <button href="" className="btn btn-lg btnStyles my-3">See More</button>
-                    </div> */}
-                    <div className="mx-auto">
-                        <Pagination >
-                            <PaginationItem>
-                                <PaginationLink first>1</PaginationLink>
-                            </PaginationItem>
-                            <PaginationItem>
-                                <PaginationLink>2</PaginationLink>
-                            </PaginationItem>
-                        </Pagination>
+                                :
+                                    <div className="accordion faqStyles">
+                                        {facts2}
+                                    </div>
+                                }
+                            </div>
+                        </div>                                                                
+                    <div className="row justify-content-center">
+                        <button href="" className="btn btn-lg btnStyles my-3" onClick={toggleFAQ}>See More</button>
                     </div>
+                    
                 </div>
             </React.Fragment>
 
