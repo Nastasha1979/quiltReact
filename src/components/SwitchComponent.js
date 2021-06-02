@@ -50,22 +50,15 @@ class SwitchComponent extends Component {
         return(
             <React.Fragment>
                 <Navigation />
-                <TransitionGroup>
-                    <CSSTransition
-                        in
-                        classNames="page"
-                        timeout={300}
-                    >
+                
                         <Switch>                 
                             <Route exact path="/classes" render={() => <Classes classes={this.state.classes}/>} />                   
                             <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
                             <Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} />
                             <Route exact path="/quickTips" render={() => <QuickTips quickTips={this.state.quickTips} />} />
                             <Route exact path="/faq" render={() => <FrequentlyAsked faqs={this.state.faqs} />} />
-                            <Route exact path="/classInfo/:classInfoId" component={classInfos} />                 
-                        </Switch>
-                    </CSSTransition>
-                </TransitionGroup>
+                            <Route exact path="/classInfo/:classInfoId" component={classInfos} />               
+                        </Switch>                      
                 <Newsletter />
                 <Switch>
                     <Route path="/about" component={About} />

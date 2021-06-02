@@ -151,6 +151,25 @@ Button {
   padding: 0;
 }
 
+.classInfo {
+  font-family: $secondaryFont;
+  background-color: $backgroundClr;
+  padding: 7rem 0 7rem 0;
+}
+
+.classInfoImg {
+  width: 50%;
+  max-height: 35rem;
+}
+
+.classInfo Button {
+  font-size: 1.5rem;
+}
+
+.classInfo p {
+  font-size: 2rem;
+}
+
 //Carousel
 
 .carouselContainer h2 {

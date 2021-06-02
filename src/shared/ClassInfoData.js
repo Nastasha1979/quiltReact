@@ -73,7 +73,8 @@ const CLASS_INFO = [
         picUrl: "/assets/class5.jpg",
         materialsProvided: [
             "Math Cheat Sheet",
-            "Calculator"
+            "Calculator",
+            "Pack of Fat Quarters"
         ]
     },
     {
