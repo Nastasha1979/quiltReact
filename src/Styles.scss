@@ -23,6 +23,11 @@ $lightColoredText: rgb(158, 154, 154);
   
 }
 
+.linkStyle {
+  color: black;
+  text-decoration: none;
+}
+
 .phoneHeader {
   background-color: $backgroundClr;
 }
@@ -149,6 +154,15 @@ Button {
 .classMediaContainer {
   margin: 0;
   padding: 0;
+}
+
+.classMediaContainer a {
+  color: black;
+  text-decoration: none;
+}
+
+.classMediaContainer .media-body {
+  padding-top: 30px;
 }
 
 .classInfo {
@@ -330,4 +344,13 @@ body.modal-open {
 .page-exit-active {
   opacity: 0;
   transition: 300ms ease-in;
+}
+
+.breadcrumbStyles ol {
+  background-color: $backgroundClr;
+}
+
+.breadcrumbStyles a {
+  color: black;
+  text-decoration: none;
 }

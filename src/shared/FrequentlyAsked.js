@@ -7,7 +7,7 @@ const FREQUENTLY_ASKED = [
     {
         key: 1,
         question: "Do I need my own equipment for the classes?",
-        answer: "The in-person classes will provide all of the materials you need to complete the course, such as fabric, rulers, and pins. However, you will need to provide your own sewing machine, if needed to complete the class. You are welcome to bring your own tools if you'd like. For online classes, you can purchase the material's pack or bring your own materials. A list of needed tools and materials is provided for each course on the course page."
+        answer: "The in-person classes will provide all of the materials you need to complete the course, such as fabric, rulers, and pins. However, you will need to provide your own sewing machine, if needed to complete the class. You are welcome to bring your own tools if you'd like. For online classes, we will mail the materials to your home in advance. A list of provided materials is located on each course page."
     },
     {
         key: 2,

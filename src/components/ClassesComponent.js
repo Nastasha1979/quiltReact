@@ -1,8 +1,9 @@
-import React, {Component, useState} from "react";
-import { Media, Fade } from "reactstrap";
+import React, {Component} from "react";
+import { Media, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { Link } from "react-router-dom";
 import CLASS_INFO from "../shared/ClassInfoData";
 import ClassInfoComponent from "./ClassInfoComponent";
+import {FadeTransform, Stagger, Fade} from "react-animation-components";
 
 
 
@@ -19,7 +20,8 @@ class Classes extends Component {
             fadeIn: true,
             first: true,
             second: false,
-            classInfo: CLASS_INFO
+            classInfo: CLASS_INFO,
+            isOpen: true
         }
         this.getSecondCard = this.getSecondCard.bind(this);
         this.getFirstClasses = this.getFirstClasses.bind(this);
@@ -33,18 +35,18 @@ class Classes extends Component {
                 return( 
                     <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer" id="classesComp">
                         <Link to={`/classInfo/${classRoom.id}`}>
-                            <Fade in={this.state.fadeIn} >
-                                    <Media className="mediaStyles">
-                                        <Media left href="#" >
-                                            <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
+                            <Fade in>
+                                <Media className="mediaStyles">
+                                    <Media left href="#" >
+                                        <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
+                                    </Media>
+                                    <Media body className="mediaStylesText text-lg-center pl-3">
+                                        <Media heading>
+                                            {classRoom.title}
                                         </Media>
-                                        <Media body className="mediaStylesText text-lg-center pl-3">
-                                            <Media heading>
-                                                {classRoom.title}
-                                            </Media>
-                                            {classRoom.description}
-                                        </Media>
-                                    </Media> 
+                                        {classRoom.description}
+                                    </Media>
+                                </Media> 
                             </Fade>
                         </Link>
                     </div>
@@ -64,7 +66,7 @@ class Classes extends Component {
                 return(
                     <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer" id="classesComp">
                         <Link to={`/classInfo/${classRoom.id}`}>
-                            <Fade in={this.state.fadeIn} key={classRoom.id}>
+                            <Fade in key={classRoom.id}>
                                 <Media className="mediaStyles">
                                     <Media left href="#" >
                                         <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
@@ -77,7 +79,7 @@ class Classes extends Component {
                                     </Media>
                                 </Media>
                             </Fade>
-                        </Link>
+                        </Link>   
                     </div>
                 );
             } else {
@@ -96,10 +98,12 @@ class Classes extends Component {
         });
     }
 
+    
 
     render() {
 
         return(
+            <React.Fragment>
                 <div className="container-fluid">
                     <div className="row">
                         <div class="col-12 text-center my-4">
@@ -128,6 +132,8 @@ class Classes extends Component {
                     </div>
                 </div>
 
+                
+            </React.Fragment>
         );
     }
 }
