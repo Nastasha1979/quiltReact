@@ -63,19 +63,21 @@ class Classes extends Component {
             if(this.state.second && classRoom.id >= 3){
                 return(
                     <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer" id="classesComp">
-                        <Fade in={this.state.fadeIn} key={classRoom.id}>
-                            <Media className="mediaStyles">
-                                <Media left href="#" >
-                                    <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
-                                </Media>
-                                <Media body className="mediaStylesText text-lg-center pl-3">
-                                    <Media heading>
-                                        {classRoom.title}
+                        <Link to={`/classInfo/${classRoom.id}`}>
+                            <Fade in={this.state.fadeIn} key={classRoom.id}>
+                                <Media className="mediaStyles">
+                                    <Media left href="#" >
+                                        <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
                                     </Media>
-                                    {classRoom.description}
+                                    <Media body className="mediaStylesText text-lg-center pl-3">
+                                        <Media heading>
+                                            {classRoom.title}
+                                        </Media>
+                                        {classRoom.description}
+                                    </Media>
                                 </Media>
-                            </Media>
-                        </Fade>
+                            </Fade>
+                        </Link>
                     </div>
                 );
             } else {

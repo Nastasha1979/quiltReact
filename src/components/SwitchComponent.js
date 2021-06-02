@@ -41,7 +41,7 @@ class SwitchComponent extends Component {
 
     render() {
         const classInfos = ({match}) => {
-            console.log(`This is the result of the filter: ${this.state.classInfoData.filter(classInfo => classInfo.id === +match.params.classInfoId)[0]} This is match.params.classInfoId: ${match.params.classInfoId}`)
+            
             return(
                 <ClassInfoComponent classInfo={this.state.classInfoData.filter(classInfo => classInfo.id === +match.params.classInfoId)[0]} />
             );

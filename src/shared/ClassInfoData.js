@@ -8,13 +8,14 @@ const CLASS_INFO = [
         description: "Spend the morning learning the basics of quilting. Starting from the beginning, you will create your first quilt from start to finish",
         location: "San Antonio, TX",
         date: "July 10, 2021 9am - 12pm CT",
-        materialsProvided: {
-            itemA: "50 Square Charm Pack",
-            itemB: "3 Spools of Thread",
-            itemC: "Backing Fabric",
-            itemD: "Warm and Soft Batting",
-            itemC: "Needle and Thread Tote Bag"
-        }
+        picUrl: "/assets/class1.jpg",
+        materialsProvided: [
+            "50 Square Charm Pack",
+            "3 Spools of Thread",
+            "Backing Fabric",
+            "Warm and Soft Batting",
+            "Needle and Thread Tote Bag"
+        ]
     },
     {
         id: 1,
@@ -25,11 +26,12 @@ const CLASS_INFO = [
         description: "Tired of doing other people's patterns. Learn to design your own prints and create and gift quilt designs of your own creation.",
         location: "Online, San Antonio, TX",
         date: "July 14, 2021 9am - 12PM CT",
-        materialsProvided: {
-            itemA: "Graph Paper",
-            itemB: "3 Ruler Set",
-            itemC: "Colored Pencils"
-        }
+        picUrl: "/assets/class2.jpg",
+        materialsProvided: [
+            "Graph Paper",
+            "3 Ruler Set",
+            "Colored Pencils"
+        ]
     },
     {
         id: 2,
@@ -40,9 +42,10 @@ const CLASS_INFO = [
         description: "Learn some tips and tricks for keeping your quilting or sewing space neat and organized, so you can spend more time quilting and less time cleaning.",
         location: "Online Only",
         date: "Asynchronous",
-        materialsProvided: {
-            itemA: "Design Principles by John Doe"
-        }
+        picUrl: "/assets/class3.jpg",
+        materialsProvided: [
+            "Book - Design Principles by John Doe"
+        ]
     },
     {
         id: 3,
@@ -53,9 +56,10 @@ const CLASS_INFO = [
         description: "What do you do with a quilt after you finish it? Learn the basics to properly clean and store your quilts so they are preserved for when you need them.",
         location: "Online Only",
         date: "Asynchronous",
-        materialsProvided: {
-            itemA: "No materials provided"
-        }
+        picUrl: "/assets/class4.jpg",
+        materialsProvided: [
+            "No materials provided"
+        ]
     },
     {
         id: 4,
@@ -66,10 +70,11 @@ const CLASS_INFO = [
         description: "I know, we all hate it, but learning the basic math and tips and trick will ensure all of your quilts turn out exactly as planned.",
         location: "San Antonio, TX",
         date: "August 4, 2021 9am - 11am CT",
-        materialsProvided: {
-            itemA: "Math Cheat Sheet",
-            itemB: "Calculator"
-        }
+        picUrl: "/assets/class5.jpg",
+        materialsProvided: [
+            "Math Cheat Sheet",
+            "Calculator"
+        ]
     },
     {
         id: 5,
@@ -80,6 +85,7 @@ const CLASS_INFO = [
         description: "Color is the bedrock of all forms of art. Learn color theory to create more eye-catching and vibrant quilts",
         location: "San Antonio, TX",
         date: "August 1, 2021 9am - 12PM CT",
+        picUrl: "/assets/class6.jpg",
         materialsProvided: {
             itemA: "Color Wheel",
             itemB: "Pack of Fat Quarters",
