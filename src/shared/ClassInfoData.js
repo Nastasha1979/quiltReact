@@ -86,11 +86,11 @@ const CLASS_INFO = [
         location: "San Antonio, TX",
         date: "August 1, 2021 9am - 12PM CT",
         picUrl: "/assets/class6.jpg",
-        materialsProvided: {
-            itemA: "Color Wheel",
-            itemB: "Pack of Fat Quarters",
-            itemC: "Quilt Reference Book"
-        }
+        materialsProvided: [
+            "Color Wheel",
+            "Pack of Fat Quarters",
+            "Quilt Reference Book"
+        ]
     }
 ];
 

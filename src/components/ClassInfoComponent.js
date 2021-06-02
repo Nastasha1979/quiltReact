@@ -2,7 +2,12 @@ import React from "react";
 import {Container, Row, Col} from "reactstrap";
 
 function RenderStuff({classInfo}){
-    
+    const materials = classInfo.materialsProvided.map(material => {
+        return (
+            <li>{material}</li>
+        );
+    });
+
     return (
         
             <div key={classInfo.id}>
@@ -12,7 +17,7 @@ function RenderStuff({classInfo}){
                 <h4>{classInfo.date}</h4>
                 <h4>{classInfo.location}</h4>
                 <p>{classInfo.description}</p>
-                
+                <ul>{materials}</ul>
             </div>
         
     );
