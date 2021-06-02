@@ -294,3 +294,21 @@ body.modal-open {
   background-color: $backgroundClr;
 }
 
+//Animation Styles
+.page-enter {
+  transform: translateX(-100%)
+}
+
+.page-enter-active {
+  transition: 300ms ease-out;
+  transform: translateX(0%);
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: 300ms ease-in;
+}

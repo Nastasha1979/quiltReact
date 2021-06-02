@@ -2,37 +2,37 @@
 
 const CLASSES_DATA = [
     {
-        key: 0,
+        id: 0,
         title: "Beginner's Quilting",
         description: "Learn quilting from A to Z",
         pic: "/assets/class1.jpg"
     },
     {
-        key: 1,
+        id: 1,
         title: "Developing Designs",
         description: "Sometimes the hardest part is getting started",
         pic: "/assets/class2.jpg"
     },
     {
-        key: 2,
+        id: 2,
         title: "Organizing Your Space",
         description: "Clean sewing room, clean mind",
         pic: "/assets/class3.jpg"
     },
     {
-        key: 3,
+        id: 3,
         title: "Storing Your Quilts",
         description: "Keeping your quilt for life",
         pic: "/assets/class4.jpg"
     },
     {
-        key: 4,
+        id: 4,
         title: "Math For Quilters",
         description: "Learn the basics for perfect quilts",
         pic: "/assets/class5.jpg"
     },
     {
-        key: 5,
+        id: 5,
         title: "Color Theory",
         description: "Make eye-catching quilts",
         pic: "/assets/class6.jpg"

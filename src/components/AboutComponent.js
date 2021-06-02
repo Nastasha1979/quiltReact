@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Media, Fade, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 
 class About extends Component {
@@ -112,7 +113,6 @@ class About extends Component {
         const errors = this.validate(this.state.fName, this.state.phone, this.state.email);
         return(
             <React.Fragment>
-                
                 <Fade in={this.state.fadeIn}>
                     <Media id="aboutComp">
                         <Media body className="mediaBodyStyle">
@@ -135,9 +135,9 @@ class About extends Component {
                             </div>
                         </Media>
                         <Media object src="/assets/noel.jpg" alt="Picture of Nastasha" className="myImage d-none d-md-block"/>
-
                     </Media>
                 </Fade>
+                    
 
                 <Modal isOpen={this.state.isContactModalOpen} toggle={this.toggleContact}>
                         <ModalHeader toggle={this.toggleContact} className="d-block text-center">

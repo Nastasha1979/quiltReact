@@ -1,7 +1,9 @@
-import { render } from "@testing-library/react";
 import React, {Component, useState} from "react";
 import { Media, Fade } from "reactstrap";
-import CLASSES_DATA from "../shared/ClassesData";
+import { Link } from "react-router-dom";
+import CLASS_INFO from "../shared/ClassInfoData";
+import ClassInfoComponent from "./ClassInfoComponent";
+
 
 
 
@@ -14,10 +16,10 @@ class Classes extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            classes: CLASSES_DATA,
             fadeIn: true,
             first: true,
             second: false,
+            classInfo: CLASS_INFO
         }
         this.getSecondCard = this.getSecondCard.bind(this);
         this.getFirstClasses = this.getFirstClasses.bind(this);
@@ -26,23 +28,25 @@ class Classes extends Component {
 
     getFirstClasses(){
 
-        const showClass = this.state.classes.map(classRoom => {
-            if(this.state.first && classRoom.key < 3) {
+        const showClass = this.props.classes.map(classRoom => {
+            if(this.state.first && classRoom.id < 3) {
                 return( 
                     <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer" id="classesComp">
-                        <Fade in={this.state.fadeIn} >
-                            <Media className="mediaStyles">
-                                <Media left href="#" >
-                                    <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
-                                </Media>
-                                <Media body className="mediaStylesText text-lg-center pl-3">
-                                    <Media heading>
-                                        {classRoom.title}
-                                    </Media>
-                                    {classRoom.description}
-                                </Media>
-                            </Media>
-                        </Fade>
+                        <Link to={`/classInfo/${classRoom.id}`}>
+                            <Fade in={this.state.fadeIn} >
+                                    <Media className="mediaStyles">
+                                        <Media left href="#" >
+                                            <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
+                                        </Media>
+                                        <Media body className="mediaStylesText text-lg-center pl-3">
+                                            <Media heading>
+                                                {classRoom.title}
+                                            </Media>
+                                            {classRoom.description}
+                                        </Media>
+                                    </Media> 
+                            </Fade>
+                        </Link>
                     </div>
                 ); 
             } else {
@@ -55,11 +59,11 @@ class Classes extends Component {
     }
 
     getSecondClasses() {
-        const showClass = this.state.classes.map(classRoom => {
-            if(this.state.second && classRoom.key >= 3){
+        const showClass = this.props.classes.map(classRoom => {
+            if(this.state.second && classRoom.id >= 3){
                 return(
                     <div class="col-12 col-md-4 w-100 mx-auto classMediaContainer" id="classesComp">
-                        <Fade in={this.state.fadeIn} >
+                        <Fade in={this.state.fadeIn} key={classRoom.id}>
                             <Media className="mediaStyles">
                                 <Media left href="#" >
                                     <Media object className="classImgStyles" src={classRoom.pic} alt={classRoom.title} />
@@ -89,7 +93,6 @@ class Classes extends Component {
                 second: !this.state.second
         });
     }
-
 
 
     render() {
