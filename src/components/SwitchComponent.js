@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import{ Switch, Route, Redirect} from "react-router-dom";
+import{ Switch, Route, Redirect } from "react-router-dom";
 import Navigation from "./Navigation";
 import Footer from "./FooterComponent";
 import Classes from "./ClassesComponent";
@@ -20,9 +20,6 @@ import CLASS_INFO from "../shared/ClassInfoData";
 
 
 
-
-
-
 class SwitchComponent extends Component {
     constructor(props) {
         super(props);
@@ -37,9 +34,6 @@ class SwitchComponent extends Component {
         
     }
 
-    
-
-
     render() {
         const classInfos = ({match}) => {
             
@@ -51,14 +45,14 @@ class SwitchComponent extends Component {
         return(
             <React.Fragment>
                 <Navigation />
-                
                         <Switch>                 
                             <Route exact path="/classes" render={() => <Classes classes={this.state.classes}/>} />                   
                             <Route exact path="/inspiration" render={() => <Inspiration inspiration={this.state.carousels}/>} />
                             <Route exact path="/articles" render={() => <Articles articles={this.state.articles} />} />
                             <Route exact path="/quickTips" render={() => <QuickTips quickTips={this.state.quickTips} />} />
                             <Route exact path="/faq" render={() => <FrequentlyAsked faqs={this.state.faqs} />} />
-                            <Route exact path="/classInfo/:classInfoId" component={classInfos} />               
+                            <Route exact path="/classInfo/:classInfoId" component={classInfos} /> 
+                            <Redirect path="/home" />              
                         </Switch>                      
                 <Newsletter />
                 <Switch>

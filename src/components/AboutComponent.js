@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Media, Fade, Button, Modal, ModalBody, ModalHeader, Form, FormGroup, Input, Label, FormFeedback } from "reactstrap";
 
 
-
-
 class About extends Component {
     constructor(props) {
         super(props);
@@ -18,16 +16,15 @@ class About extends Component {
                 email: false,
                 phone: false
             }
-        
         }
     }
+
     toggleContact = () => {
         this.setState({
             isContactModalOpen: !this.state.isContactModalOpen
         });
     }
-    
-   
+       
 
     handleEmailClick = () => {
         let e = document.getElementById("emailStuff");
@@ -107,7 +104,6 @@ class About extends Component {
         });
     }
     
-
 
     render(){
         const errors = this.validate(this.state.fName, this.state.phone, this.state.email);

@@ -5,8 +5,7 @@ $secondaryFont: "Roboto", sans-serif;
 $thirdFont: "Sacramento", cursive;
 $lightColoredText: rgb(158, 154, 154);
 
-
-
+//Global Styles
 .mainHeader {
   font-family: $thirdFont;
   font-size: 4rem;
@@ -30,15 +29,14 @@ $lightColoredText: rgb(158, 154, 154);
 
 .phoneHeader {
   background-color: $backgroundClr;
-}
-
-.phoneHeader h1 {
-  font-family: $thirdFont;
-  font-size: 4rem;
-  font-weight: bold;
-  text-align: center;
-  margin: auto;
-  padding: 20px;
+  h1 {
+    font-family: $thirdFont;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+  }
 }
 
 Button {
@@ -47,17 +45,6 @@ Button {
   font-weight: bold !important;
 }
 
-.App-header {
-    background-color: $backgroundClr;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: black;
-    font-family: $primaryFont;
-}
 
 //Navbar Styles
 
@@ -78,7 +65,7 @@ Button {
   font-size: 1.5rem;
 }
 
-//Top Image
+//Home Image
 
 .topImageCont {
   padding: 0;
@@ -91,8 +78,6 @@ Button {
   background-size: cover;
 
 }
-
-
 
 .textCont {
     position: absolute;
@@ -115,8 +100,6 @@ Button {
       text-align: center;
     }
 }
-
-
 
 //Footer
 
@@ -154,21 +137,25 @@ Button {
 .classMediaContainer {
   margin: 0;
   padding: 0;
-}
-
-.classMediaContainer a {
-  color: black;
-  text-decoration: none;
-}
-
-.classMediaContainer .media-body {
-  padding-top: 30px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  .media-body {
+    padding-top: 30px;
+  }
 }
 
 .classInfo {
   font-family: $secondaryFont;
   background-color: $backgroundClr;
   padding: 7rem 0 7rem 0;
+  Button {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
 }
 
 .classInfoImg {
@@ -176,12 +163,14 @@ Button {
   max-height: 35rem;
 }
 
-.classInfo Button {
-  font-size: 1.5rem;
+//Classes Breadcrumbs
+.breadcrumbStyles ol {
+  background-color: $backgroundClr;
 }
 
-.classInfo p {
-  font-size: 2rem;
+.breadcrumbStyles a {
+  color: black;
+  text-decoration: none;
 }
 
 //Carousel
@@ -195,35 +184,35 @@ Button {
   width: 75%;
 }
 
-.carousel-item > img { 
-  width: 100%; 
-}
-
 .carousel-caption {
   background-color: rgba(248, 244, 238, 0.705);
   border-radius: 5px;
-}
-
-.carousel-caption h3, .carousel-caption p {
-  color: black;
-  font-family: $secondaryFont;
+  h3 {
+    font-size: 3rem;
+    color: black;
+    font-family: $secondaryFont;
+  }
+  p {
+    color: black;
+    font-family: $secondaryFont;
+  }
+  > img {
+    width: 100%;
+  }
 }
 
 //Articles
 
 .articleMediaStyle img {
   height: 200px;
-
-
 }
 
 .articleContainer {
   height: 500px;
-}
-
-.articleContainer p {
-  font-size: 16px;
-  font-family: $secondaryFont;
+  p {
+    font-size: 16px;
+    font-family: $secondaryFont;
+  }
 }
 
 .fullArticleLink {
@@ -243,16 +232,15 @@ Button {
 
 .quickTipsStyles {
     height: 100%;
-}
-
-.quickTipsStyles .accordion-title {
-  font-size: 2rem;
-  font-family: $secondaryFont;
-  border: solid grey 2px;
-  border-radius: 5px;
-  box-shadow: 10px 10px rgb(235, 232, 232, .5);
-  margin: 10px 0px 10px 0px;
-  background-color: $backgroundClr;
+    .accordion-title {
+      font-size: 2rem;
+      font-family: $secondaryFont;
+      border: solid grey 2px;
+      border-radius: 5px;
+      box-shadow: 10px 10px rgb(235, 232, 232, .5);
+      margin: 10px 0px 10px 0px;
+      background-color: $backgroundClr;
+    }
 }
 
 .quickTipsInner {
@@ -280,14 +268,16 @@ Button {
 
 //Newsletter  
 
-.newsletterStyles input,
-.newsletterStyles button {
+.newsletterStyles {
+  input {
     font-size: 24px;
     border-radius: 0;
-}
-
-.newsletterStyles button {
+  }
+  button {
+    font-size: 24px;
+    border-radius: 0;
     padding: 5px 75px 5px 75px;
+  }
 }
 
 //About
@@ -298,21 +288,21 @@ Button {
   right: 0;
 }
 
-.mediaBodyStyle h3 {
+.mediaBodyStyle {
+  h3 {
     padding: 20px 0px 10px 0px;
     font-family: $secondaryFont;
     text-align: center;
     font-size: 2rem;
-}
+  }
 
-.mediaBodyStyle address {
-  text-align: center;
-  font-family: $secondaryFont;
-  font-size: 1.5rem;
-  color: black;
-  
+  address {
+    text-align: center;
+    font-family: $secondaryFont;
+    font-size: 1.5rem;
+    color: black;
+  }
 }
-
 
 //To Fix Scrolling Issues when Modal Content Opens //////////////
 body.modal-open {
@@ -327,30 +317,4 @@ body.modal-open {
   background-color: $backgroundClr;
 }
 
-//Animation Styles
-.page-enter {
-  transform: translateX(-100%)
-}
 
-.page-enter-active {
-  transition: 300ms ease-out;
-  transform: translateX(0%);
-}
-
-.page-exit {
-  opacity: 1;
-}
-
-.page-exit-active {
-  opacity: 0;
-  transition: 300ms ease-in;
-}
-
-.breadcrumbStyles ol {
-  background-color: $backgroundClr;
-}
-
-.breadcrumbStyles a {
-  color: black;
-  text-decoration: none;
-}

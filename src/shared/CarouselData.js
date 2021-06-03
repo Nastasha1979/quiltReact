@@ -1,4 +1,3 @@
-
 const CAROUSEL_DATA = [
     {
         key: 0,

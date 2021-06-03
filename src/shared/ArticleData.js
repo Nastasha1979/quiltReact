@@ -1,4 +1,3 @@
-
 const ARTICLE_DATA = [
 	{
 		key: 1,

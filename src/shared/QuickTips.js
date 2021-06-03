@@ -34,8 +34,7 @@ const QUICK_TIPS = [
             <iframe width="560" height="315" src="https://www.youtube.com/embed/VcN1v8sVD-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="d-none d-md-block mx-auto"></iframe>,
         videoLink: "https://www.youtube.com/watch?v=VcN1v8sVD-Y",
 		videoLinkText: "Click Link for Video"
-	}					
-						
+	}											
 ];
 
 export default QUICK_TIPS;

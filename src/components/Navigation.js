@@ -2,20 +2,9 @@ import React, {Component} from "react";
 import NavItems from "../shared/NavBarItems";
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavbarBrand, Container, Modal, 
     ModalBody, ModalHeader, Button, Form, FormGroup, Input, Label, FormFeedback } from "reactstrap";
-import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import { focusableElements } from "reactstrap/lib/utils";
 
 
-
-
-
-
-
-/********************************
- * To Do List
- * fix the text over image on small/phone viewports
- **********************************/
 class Navigation extends Component {
     constructor(props) {
         super(props);
@@ -45,7 +34,6 @@ class Navigation extends Component {
 
         
     }
-
     
 
     toggleNav() {
@@ -56,7 +44,6 @@ class Navigation extends Component {
 
     switchModal(event) {
         if(this.toggleModalCreate){
-
             this.setState({
                 isModalOpenCreate: !this.state.isModalOpenCreate
             });
@@ -66,7 +53,6 @@ class Navigation extends Component {
             });
 
         } else {
-            
             this.setState({
                 isModalOpenLog: !this.state.isModalOpenLog
             });
@@ -80,7 +66,6 @@ class Navigation extends Component {
     }
 
     toggleModalLog() {
- 
         this.setState({
             isModalOpenLog: !this.state.isModalOpenLog
         });
@@ -92,7 +77,6 @@ class Navigation extends Component {
             isModalOpenCreate: !this.state.isModalOpenCreate
         });
     }
-
     
 
     handleSubmitLog(event){
@@ -148,9 +132,6 @@ class Navigation extends Component {
 
     getNavList() {
         const navTime = this.state.navItems.map(navItem =>  {
-
-            
-            
             return(
                 <React.Fragment>
                     <NavItem key={navItem.key}>
@@ -170,8 +151,7 @@ class Navigation extends Component {
         
         return navTime;
     }
-    
-    
+        
 
     render() {
         const errors = this.validate(this.state.username, this.state.password);  
@@ -179,7 +159,7 @@ class Navigation extends Component {
         return(
             <React.Fragment>
                 <Navbar sticky="top" expand="lg" className="navbarStyles-container">
-                    <div className="container-fluid">
+                    <Container fluid>
                         <NavbarBrand className="logoStyle" href="/">Needle & Thread</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}><i class="fa fa-chevron-circle-down fa-3x"></i></NavbarToggler>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -192,17 +172,17 @@ class Navigation extends Component {
                             <span className="navItem d-none d-lg-block">|</span> 
                             <Link className="navItem mx-2" onClick={this.toggleModalCreate}>Create Account</Link>   
                         </Collapse>
-                    </div>
+                    </Container>
                 </Navbar>
                 <Container fluid className="topImageCont px-0 d-none d-md-block">
-                    <img className="topImage" src="/assets/quilt2.jpg" alt="Quilt Picture Error" />
+                    <img className="topImage" src="/assets/quilt2.jpg" alt="Sewing a Quilt close up" />
                     <div className="textCont">
                         <h1>Learn the Timeless Art of Quilting</h1>
                         <h5 className="d-none d-lg-block">You too can provide warmth, protection, and love to friends and family in the tradition of men and women for hundreds of years. Come join us as we celebrate the art, beauty, and functionality of quilt-making.</h5>
                     </div>
                 </Container>
                 <Container fluid className="d-md-none phoneHeader">
-                    <div >
+                    <div>
                         <h1>Learn the Timeless Art of Quilting</h1>
                         <h5 className="d-none d-lg-block">You too can provide warmth, protection, and love to friends and family in the tradition of men and women for hundreds of years. Come join us as we celebrate the art, beauty, and functionality of quilt-making.</h5>
                     </div>
@@ -306,7 +286,6 @@ class Navigation extends Component {
                         </Form>
                     </ModalBody>
                 </Modal>
-
                 
             </React.Fragment>
 

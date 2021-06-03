@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Media, Button, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function RenderStuff({classInfo}){
+function RenderStuff({classInfo}) {
     const materials = classInfo.materialsProvided.map(material => {
         return (
             <li>{material}</li>
@@ -10,7 +10,6 @@ function RenderStuff({classInfo}){
     });
 
     const [isOpen, setOpen] = useState(false);
-
 
     return (
         <div>
@@ -47,11 +46,10 @@ function RenderStuff({classInfo}){
 function ClassInfoComponent(props) {
     
     if(props.classInfo) {
-        return(
-            
+        return(            
             <Container fluid className="classInfo">
                 <Row>
-                    <Col>
+                    <Col xs="12">
                         <Breadcrumb className="breadcrumbStyles">
                             <BreadcrumbItem>
                                 <Link to="/classes">
@@ -62,7 +60,7 @@ function ClassInfoComponent(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm="12">
+                    <Col xs="12">
                         {<RenderStuff classInfo={props.classInfo} />}
                     </Col>
                 </Row>
@@ -70,7 +68,7 @@ function ClassInfoComponent(props) {
    
         );
     } else {
-        return <div />
+        return <div> Error Loading Class </div>
     }
 } 
     

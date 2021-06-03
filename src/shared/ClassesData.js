@@ -1,5 +1,3 @@
-
-
 const CLASSES_DATA = [
     {
         id: 0,

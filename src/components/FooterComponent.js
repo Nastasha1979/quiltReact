@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Modal, ModalBody, ModalHeader, Button, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
+import { Modal, ModalBody, ModalHeader, Button, Form, FormGroup, Label, Input, FormFeedback, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
 
@@ -136,20 +136,20 @@ class Footer extends Component {
         return (
             <React.Fragment>
                 <footer>
-                    <div class="container-fluid footerStyles pb-4">
-                        <div class="row pt-3">
-                            <div class="col-12 text-center">
+                    <Container fluid className="footerStyles pb-4">
+                        <Row className="pt-3">
+                            <Col xs="12" className="text-center">
                                 <h1 class="logoStyle">Needle & Thread</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 text-center">
-                                    <a class="btn btn-social-icon btn-pinterest socialStyles"><i class="fa fa-pinterest"></i></a>
-                                    <a class="btn btn-social-icon btn-pinterest socialStyles"><i class="fa fa-instagram"></i></a>
-                                    <a class="btn btn-social-icon btn-pinterest socialStyles"><i class="fa fa-twitter"></i></a>
-                                    <a class="btn btn-social-icon btn-pinterest socialStyles"><i class="fa fa-youtube"></i></a>
-                            </div>
-                            <div class="col-6 text-center">
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col xs="6" className="text-center">
+                                    <a className="btn" href="https://www.pinterest.com" target="_blank" rel="noreferrer"><i class="fa fa-pinterest"></i></a>
+                                    <a className="btn" href="https://www.instagram.com" target="_blank" rel="noreferrer"><i class="fa fa-instagram"></i></a>
+                                    <a className="btn" href="https://www.twitter.com" target="_blank" rel="noreferrer"><i class="fa fa-twitter"></i></a>
+                                    <a className="btn" href="https://www.youtube.com" target="_blank" rel="noreferrer"><i class="fa fa-youtube"></i></a>
+                            </Col>
+                            <Col xs="6" className="text-center">
                                     <Link className="footerLink" to="/about#aboutComp">About </Link>
                                     <span className="footBarSpan">|</span>
                                     <Link className="footerLink" onClick={this.toggleContact}> Contact </Link>
@@ -157,9 +157,9 @@ class Footer extends Component {
                                     <Link className="footerLink" onClick={this.togglePrivacy}> Privacy </Link>
                                     <span className="footBarSpan">|</span>
                                     <Link className="footerLink" onClick={this.toggleTerms}> Terms</Link>
-                            </div>
-                        </div>
-                    </div>
+                            </Col>
+                        </Row>
+                    </Container>
                 </footer>
                 
                 <Modal isOpen={this.state.isTermsModalOpen} toggle={this.toggleTerms}>
@@ -168,7 +168,7 @@ class Footer extends Component {
                             Terms And Conditions
                     </ModalHeader>
                     <ModalBody>
-                        <div class="container-fluid">
+                        <Container fluid>
                             <p>Welcome to Needle & Thread!</p>
 
                             <p>These terms and conditions outline the rules and regulations for the use of Needle & Thread's Website, located at Needle & Thread.com.</p>
@@ -287,10 +287,10 @@ class Footer extends Component {
                             
                             <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
                             
-                            <p>Source: <a>https://www.privacypolicyonline.com/</a></p>
+                            <p>Source: <a href="https://www.privacypolicyonline.com/" target="_blank" rel="noreferrer">https://www.privacypolicyonline.com/</a></p>
                             
                             
-                        </div>
+                        </Container>
                         <Button onClick={this.toggleTerms}>Close</Button>
                     </ModalBody>    
                 </Modal>
@@ -301,7 +301,7 @@ class Footer extends Component {
                             Privacy Policy
                     </ModalHeader>
                     <ModalBody>
-                        <div class="container-fluid">
+                        <Container fluid>
                             <p>At Needle & Thread, accessible from Needle & Thread.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Needle & Thread and how we use it.</p>
 
                             <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
@@ -338,8 +338,8 @@ class Footer extends Component {
 
                             <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
 
-                            <p>Source: <a>https://www.privacypolicyonline.com/</a></p>      
-                    </div>
+                            <p>Source: <a href="https://www.privacypolicyonline.com/" target="_blank" rel="noreferrer">https://www.privacypolicyonline.com/</a></p>      
+                    </Container>
                     <Button onClick={this.togglePrivacy}>Close</Button>
                     </ModalBody>
                 </Modal>
@@ -401,7 +401,6 @@ class Footer extends Component {
                     </ModalBody>
                 </Modal>
                 
-
             </React.Fragment>
         );
     }

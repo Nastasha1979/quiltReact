@@ -48,8 +48,6 @@ const NavItems = [
         classN: "navItem mx-2"
         
     }
-    
-
 ];
 
 export default NavItems;

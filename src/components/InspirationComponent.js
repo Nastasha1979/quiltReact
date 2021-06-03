@@ -1,22 +1,8 @@
 import React, { useState } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselCaption,
-  Container
-} from 'reactstrap';
-import {
-  GlassMagnifier,
-  MOUSE_ACTIVATION,
-  TOUCH_ACTIVATION
-} from "react-image-magnifiers";
-
-
-
-/******************TO DO***********************************
- * 
- *******************************************************/
+import {Carousel, CarouselItem, CarouselControl, CarouselCaption, Container, Row, Col } from 'reactstrap';
+import { GlassMagnifier, MOUSE_ACTIVATION, TOUCH_ACTIVATION } from "react-image-magnifiers";
+  
+  
 
  const Inspiration = ({inspiration}) => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -50,7 +36,7 @@ import {
             className="carouselImg"
           />
           
-          <CarouselCaption captionText={inspire.caption} captionHeader={inspire.caption} />
+          <CarouselCaption captionText={inspire.caption} captionHeader={inspire.header} />
         </CarouselItem>
       );
     });
@@ -58,8 +44,14 @@ import {
     return (
       <React.Fragment>
         <Container fluid className="carouselContainer text-center pb-3" id="inspirationComp">
-          <h2 className="mainHeader">Inspiration</h2>
-          <h5 className="subHeader">Take a stroll through quilts submitted by our teachers, students, and friends to gather inspiration for your own quilts.</h5>
+          <Row>
+            <Col xs="12" className="text-center my-4">
+              <h2 className="mainHeader">Inspiration</h2>
+            </Col>
+            <Col xs="8" className="m-auto text-center text-muted my-4">
+              <h5 className="subHeader">Take a stroll through quilts submitted by our teachers, students, and friends to gather inspiration for your own quilts.</h5>
+            </Col>
+          </Row>
           <Carousel
             activeIndex={activeIndex}
             next={next}
@@ -67,7 +59,6 @@ import {
             className="carouselStyle mx-auto"
             pause="hover"
           >
-            
             {slides}
             <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
             <CarouselControl direction="next" directionText="Next" onClickHandler={next} />

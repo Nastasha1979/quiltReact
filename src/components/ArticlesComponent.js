@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col, Media, Fade } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Media, Fade, Container } from 'reactstrap';
 import classnames from 'classnames';
 
 
@@ -8,29 +7,29 @@ import classnames from 'classnames';
 
 function GetPanel({article}) {
   const [fadeIn] = useState(true);
-    const fullText = article.text.map(para => {
-        return(
-            <p className="d-none d-md-block">{para}</p>
-        );
-    });
 
-    return(
-      <Fade in={fadeIn}>
-        <Media className="articleMediaStyle" key={article.key}>
-            <Media left>
-                <Media object src={article.pic} alt="Image associated with Article" className="pr-2 justify-content-center d-none d-lg-block"/>
-            </Media>
-            <Media body>
-                <div>
-                  {fullText}
-                  <div className="fullArticleLink">
-                    <a href={article.readMoreLink} target="_blank" >Read Full Article...</a>
-                  </div>
+  const fullText = article.text.map(para => {
+      return(
+          <p className="d-none d-md-block">{para}</p>
+      );
+  });
+
+  return(
+    <Fade in={fadeIn}>
+      <Media className="articleMediaStyle" key={article.key}>
+          <Media left>
+              <Media object src={article.pic} alt="Image associated with Article" className="pr-2 justify-content-center d-none d-lg-block"/>
+          </Media>
+          <Media body>
+              <div>
+                {fullText}
+                <div className="fullArticleLink">
+                  <a href={article.readMoreLink} target="_blank" rel="noreferrer">Read Full Article...</a>
                 </div>
-                
-            </Media>
-        </Media>
-      </Fade>
+              </div>  
+          </Media>
+      </Media>
+    </Fade>
         
         
     );
@@ -52,17 +51,17 @@ const Articles = (props) => {
 
   return (
     
-      <div className="container-fluid articleContainer" id="articlesComp">
-          <div className="row">
-              <div className="col">
-                  <h2 className="mainHeader my-2">Articles</h2>
-              </div>
-          </div>
-          <div className="row pb-5">
-              <div className="col">
-                  <h5 className="text-muted subHeader">Stay up-to-date on the world of quilting with top experts from around the world.</h5>
-              </div>
-          </div>
+      <Container fluid className="articleContainer" id="articlesComp">
+        <Row>
+            <Col xs="12">
+                <h2 className="mainHeader my-2">Articles</h2>
+            </Col>
+        </Row>
+        <Row className="pb-5">
+            <Col xs="8" className="m-auto text-center text-muted">
+                <h5 className="text-muted subHeader">Stay up-to-date on the world of quilting with top experts from around the world.</h5>
+            </Col>
+        </Row>
           
         <Nav tabs>
           <NavItem className="col-12 col-lg-3">
@@ -148,7 +147,7 @@ const Articles = (props) => {
               </Row>
           </TabPane>
         </TabContent>
-      </div>
+      </Container>
     
   );
 }
