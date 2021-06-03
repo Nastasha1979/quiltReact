@@ -17,7 +17,7 @@ const FREQUENTLY_ASKED = [
     {
         key: 3,
         question: "What if my question isn't here?",
-        answer: "Feel free to reach out to us using the contact us form! We will respond within 48 hours."
+        answer: "Feel free to reach out to us using the contact us form found in the footer! We will respond within 48 hours."
     },
     {
         key: 4,

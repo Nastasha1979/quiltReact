@@ -22,7 +22,7 @@ function GetTips({quickTip}) {
                     }
                     {isOpen &&
                     <div className="d-block d-md-none text-center">
-                        <a href={quickTip.videoLink}>Click Link for Video</a>
+                        <a href={quickTip.videoLink} target="_blank" rel="noreferrer">Click Link for Video</a>
                     </div>
                     }
                 </div>

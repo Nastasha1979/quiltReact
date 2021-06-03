@@ -42,6 +42,7 @@ class Navigation extends Component {
         });
     }
 
+    
     switchModal(event) {
         if(this.toggleModalCreate){
             this.setState({
@@ -139,7 +140,7 @@ class Navigation extends Component {
                             className={navItem.classN} 
                             to={navItem.to}
                             smooth
-                            scroll={(el) => el.scrollIntoView({ block: 'center' })}                        
+                            scroll={(el) => el.scrollIntoView({ block: 'center' })} 
                         >
                             {navItem.name}
                         </Link>

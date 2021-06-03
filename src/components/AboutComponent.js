@@ -179,8 +179,8 @@ class About extends Component {
                                     <FormFeedback>{errors.phone}</FormFeedback>
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label htmlFor="contactText">Message</Label>
-                                    <textarea name="contactText" id="contactText" rows="6" placeholder="How can we help you?" 
+                                    <Label htmlFor="contactText">Message</Label><br />
+                                    <textarea name="contactText" id="contactText" rows="6" cols="48" placeholder="How can we help you?" 
                                     value={this.state.contactText}
                                     onChange={this.handleInputChange}
                                     />

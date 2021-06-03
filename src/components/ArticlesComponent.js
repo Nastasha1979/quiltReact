@@ -64,7 +64,7 @@ const Articles = (props) => {
         </Row>
           
         <Nav tabs>
-          <NavItem className="col-12 col-lg-3">
+          <NavItem className="col-12 col-xl-3">
             <NavLink
               className={classnames({ active: activeTab === '1' })}
               onClick={() => { toggle('1'); }}
@@ -72,7 +72,7 @@ const Articles = (props) => {
               Quilt Project Planning
             </NavLink>
           </NavItem>
-          <NavItem className="col-12 col-lg-3">
+          <NavItem className="col-12 col-xl-3">
             <NavLink
               className={classnames({ active: activeTab === '2' })}
               onClick={() => { toggle('2'); }}
@@ -80,7 +80,7 @@ const Articles = (props) => {
               Straight Line Quilting
             </NavLink>
           </NavItem>
-          <NavItem className="col-12 col-lg-3">
+          <NavItem className="col-12 col-xl-3">
             <NavLink
               className={classnames({ active: activeTab === '3' })}
               onClick={() => { toggle('3'); }}
@@ -88,7 +88,7 @@ const Articles = (props) => {
               The 4 Best Quilt Rulers
             </NavLink>
           </NavItem>
-          <NavItem className="col-12 col-lg-3">
+          <NavItem className="col-12 col-xl-3">
             <NavLink
               className={classnames({ active: activeTab === '4' })}
               onClick={() => { toggle('4'); }}

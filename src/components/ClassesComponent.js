@@ -26,7 +26,7 @@ class Classes extends Component {
         const showClass = this.props.classes.map(classRoom => {
             if(this.state.first && classRoom.id < 3) {
                 return( 
-                    <Col md="4" className="w-100 mx-auto classMediaContainer" id="classesComp">
+                    <Col lg="4" className="w-100 mx-auto classMediaContainer " id="classesComp">
                         <Link to={`/classInfo/${classRoom.id}`}>
                             <Fade in>
                                 <Media className="mediaStyles">
@@ -57,7 +57,7 @@ class Classes extends Component {
         const showClass = this.props.classes.map(classRoom => {
             if(this.state.second && classRoom.id >= 3){
                 return(
-                    <Col md="4" className="w-100 mx-auto classMediaContainer" id="classesComp">
+                    <Col lg="4" className="w-100 mx-auto classMediaContainer " id="classesComp">
                         <Link to={`/classInfo/${classRoom.id}`}>
                             <Fade in={this.state.fadeIn} key={classRoom.id}>
                                 <Media className="mediaStyles">
