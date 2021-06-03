@@ -16,7 +16,8 @@ import CAROUSEL_DATA from "../shared/CarouselData";
 import FREQUENTLY_ASKED from "../shared/FrequentlyAsked";
 import CLASSES_DATA from "../shared/ClassesData";
 import CLASS_INFO from "../shared/ClassInfoData";
-import {TransitionGroup, CSSTransition} from "react-transition-group";
+
+
 
 
 
@@ -64,7 +65,6 @@ class SwitchComponent extends Component {
                     <Route path="/about" component={About} />
                 </Switch>
                 <Footer />
-                {/* <TodoList /> */}
             </React.Fragment>
         );
     }

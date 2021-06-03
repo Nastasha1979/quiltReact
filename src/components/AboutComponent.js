@@ -1,31 +1,33 @@
 import React, { Component } from "react";
-import { Media, Fade, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, FormFeedback } from "reactstrap";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Media, Fade, Button, Modal, ModalBody, ModalHeader, Form, FormGroup, Input, Label, FormFeedback } from "reactstrap";
+
+
 
 
 class About extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            fadeIn: true,
             fname: "",
             email: "",
             phone: "",
-            fadeIn: true,
             isContactModalOpen: false,
             touched: {
                 fName: false,
                 email: false,
                 phone: false
             }
-        }
         
+        }
     }
-
     toggleContact = () => {
         this.setState({
             isContactModalOpen: !this.state.isContactModalOpen
         });
     }
+    
+   
 
     handleEmailClick = () => {
         let e = document.getElementById("emailStuff");
@@ -90,7 +92,7 @@ class About extends Component {
         return errors;
     }
 
-    handleInputChange = (event) =>{
+    handleInputChange = (event) => {
         const target = event.target;
         const name = target.name;
         const value = target.value;
@@ -104,13 +106,12 @@ class About extends Component {
             touched: {...this.state.touched, [field]: true}
         });
     }
-
-
-
-
     
-    render() {
+
+
+    render(){
         const errors = this.validate(this.state.fName, this.state.phone, this.state.email);
+
         return(
             <React.Fragment>
                 <Fade in={this.state.fadeIn}>
@@ -120,7 +121,6 @@ class About extends Component {
                             <h5 className="subHeader text-muted">I am Nastasha Leach. Originally from Central Texas, I have lived in San Antonio since 2012.
                             I served in the US Air Force before graduating college and working as an Auditor with the City of San Antonio.
                             I hope to become a web developer in the future. </h5>  
-                            
                             <h3>Contact</h3>
                             <address>
                                 8715 Datapoint Dr <br />
@@ -136,9 +136,8 @@ class About extends Component {
                         </Media>
                         <Media object src="/assets/noel.jpg" alt="Picture of Nastasha" className="myImage d-none d-md-block"/>
                     </Media>
-                </Fade>
-                    
-
+                </Fade> 
+                
                 <Modal isOpen={this.state.isContactModalOpen} toggle={this.toggleContact}>
                         <ModalHeader toggle={this.toggleContact} className="d-block text-center">
                             <h1 className="logoStyle">Needle & Thread</h1>
@@ -199,5 +198,6 @@ class About extends Component {
         );
     }
 }
+
 
 export default About;

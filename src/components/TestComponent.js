@@ -2,8 +2,8 @@
 
 
 import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import { Transition } from "react-transition-group";
+import { Button } from "reactstrap";
+import ContactModal from "./ContactModalComponent";
 
 
 class TodoList extends Component {
@@ -12,12 +12,21 @@ class TodoList extends Component {
     
   }
 
+  loginModalRef = ({toggleContact}) => {
+      this.toggleContact = toggleContact;
+  }
+  
+  onLoginClick = () => {
+      this.toggleContact();
+  }
+
  
 
   render() {
     return (
       <div >
-          <h1>This is a test component</h1>
+        <ContactModal ref={this.loginModalRef}></ContactModal>
+          <Button onClick={this.onLoginClick}>Open Contact Modal</Button>
       </div>
     );
   }

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Container, Row, Col, Media, Button, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Media, Button, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { Link } from "react-router-dom";
 
 function RenderStuff({classInfo}){
@@ -14,9 +14,6 @@ function RenderStuff({classInfo}){
 
     return (
         <div>
-            {/* <Breadcrumb>
-                <BreadcrumbItem to="/classes">Back to Classes</BreadcrumbItem>
-            </Breadcrumb> */}
             <Media key={classInfo.id}>
                     <Media object src={classInfo.picUrl} alt={classInfo.title} className="img-thumbnail d-none d-lg-block classInfoImg"/>
                 <Media body className="ml-2">
@@ -31,8 +28,7 @@ function RenderStuff({classInfo}){
                     <div className="text-center mt-3">
                         <Button onClick={() => setOpen(!isOpen)}>Sign Up</Button>
                     </div>
-                </Media>
-                
+                </Media>   
             </Media>
 
             <Modal isOpen={isOpen} toggle={() => setOpen(!isOpen)}>
@@ -42,8 +38,7 @@ function RenderStuff({classInfo}){
                     </ModalHeader>
                     <ModalBody className="text-center"><h4>{`You've successfully signed up for ${classInfo.title}. See you there!`}</h4></ModalBody>
                     <ModalFooter><Button onClick={() => setOpen(!isOpen)}>OK</Button></ModalFooter>
-            </Modal>
-            
+            </Modal>  
         </div>
         
     );
@@ -51,16 +46,18 @@ function RenderStuff({classInfo}){
 
 function ClassInfoComponent(props) {
     
-
-    console.log(`this is props.classInfo: ${props.classInfo}`)
     if(props.classInfo) {
         return(
-            <React.Fragment>
+            
             <Container fluid className="classInfo">
                 <Row>
                     <Col>
                         <Breadcrumb className="breadcrumbStyles">
-                            <BreadcrumbItem><Link to="/classes"><i className="fa fa-chevron-left fa-sm"/> Back to Classes</Link></BreadcrumbItem>
+                            <BreadcrumbItem>
+                                <Link to="/classes">
+                                    <i className="fa fa-chevron-left fa-sm"/> Back to Classes
+                                </Link>
+                            </BreadcrumbItem>
                         </Breadcrumb>  
                     </Col>
                 </Row>
@@ -70,9 +67,7 @@ function ClassInfoComponent(props) {
                     </Col>
                 </Row>
             </Container>
-
-            
-            </React.Fragment>
+   
         );
     } else {
         return <div />
